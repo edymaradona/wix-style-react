@@ -7,7 +7,7 @@ import FormField from 'wix-style-react/FormField';
 import Input from 'wix-style-react/Input';
 import Tooltip from 'wix-style-react/Tooltip';
 import Button from 'wix-style-react/Button';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../src/Deprecated/TextLink';
 
 export default () => (
   <div style={{ background: '#F0F4F7', padding: 30 }}>

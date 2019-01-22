@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import style from './TableActionCell.st.css';
 import HoverSlot from './HoverSlot';
 import Tooltip from '../Tooltip/Tooltip';
-import Button from '../Button';
+import Button from '../Deprecated/Button';
 import PopoverMenu from '../PopoverMenu';
 import PopoverMenuItem from '../PopoverMenuItem';
 import ChevronRight from '../new-icons/ChevronRight';

@@ -8,7 +8,7 @@ import Breadcrumbs from '../Breadcrumbs';
 import Text from '../Text';
 import Heading from '../Heading';
 import { Animator } from 'wix-animations';
-import Button from '../Button';
+import Button from '../Deprecated/Button';
 
 const animateComponent = (show, useEnterDelay, content) => {
   return useEnterDelay ? (

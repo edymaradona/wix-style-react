@@ -2,14 +2,7 @@ import React from 'react';
 import textLinkDriverFactory from './TextLink.driver';
 import TextLink from './TextLink';
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
-import { textLinkTestkitFactory } from '../../../testkit';
-import { textLinkTestkitFactory as enzymeTextLinkTestkitFactory } from '../../../testkit/enzyme';
-import {
-  isTestkitExists,
-  isEnzymeTestkitExists,
-} from '../../../test/utils/testkit-sanity';
 import { spy } from 'sinon';
-import { mount } from 'enzyme';
 
 describe('TextLink', () => {
   const createDriver = createDriverFactory(textLinkDriverFactory);
@@ -172,36 +165,5 @@ describe('TextLink', () => {
       expect(preventDefault.calledOnce).toBe(true);
       expect(onClick.calledOnce).toBe(false);
     });
-  });
-});
-
-describe('testkit', () => {
-  it('should exist', () => {
-    expect(isTestkitExists(<TextLink link="" />, textLinkTestkitFactory)).toBe(
-      true,
-    );
-  });
-});
-
-describe('enzyme testkit', () => {
-  it('should exist', () => {
-    expect(
-      isEnzymeTestkitExists(
-        <TextLink link="" />,
-        enzymeTextLinkTestkitFactory,
-        mount,
-      ),
-    ).toBe(true);
-  });
-
-  it('should not exist', () => {
-    expect(
-      isEnzymeTestkitExists(
-        <TextLink link="" />,
-        enzymeTextLinkTestkitFactory,
-        mount,
-        { withoutDataHook: true },
-      ),
-    ).toBe(false);
   });
 });

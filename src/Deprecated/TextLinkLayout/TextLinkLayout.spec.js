@@ -2,13 +2,6 @@ import React from 'react';
 import textLinkLayoutDriverFactory from './TextLinkLayout.driver';
 import TextLinkLayout from './TextLinkLayout';
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
-import { textLinkLayoutTestkitFactory } from '../../../testkit';
-import { textLinkLayoutTestkitFactory as enzymeTextLinkLayoutTestkitFactory } from '../../../testkit/enzyme';
-import {
-  isTestkitExists,
-  isEnzymeTestkitExists,
-} from '../../../test/utils/testkit-sanity';
-import { mount } from 'enzyme';
 
 describe('TextLinkLayout', () => {
   const createDriver = createDriverFactory(textLinkLayoutDriverFactory);
@@ -101,25 +94,5 @@ describe('TextLinkLayout', () => {
 
     expect(driver.isPrefixIconExists()).toBeFalsy();
     expect(driver.isSuffixIconExists()).toBeTruthy();
-  });
-});
-
-describe('testkit', () => {
-  it('should exist', () => {
-    expect(
-      isTestkitExists(<TextLinkLayout />, textLinkLayoutTestkitFactory),
-    ).toBe(true);
-  });
-});
-
-describe('enzyme testkit', () => {
-  it('should exist', () => {
-    expect(
-      isEnzymeTestkitExists(
-        <TextLinkLayout />,
-        enzymeTextLinkLayoutTestkitFactory,
-        mount,
-      ),
-    ).toBe(true);
   });
 });

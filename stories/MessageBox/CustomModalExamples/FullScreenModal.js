@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MessageBoxFunctionalLayout } from 'wix-style-react/MessageBox';
-import { Button } from 'wix-style-react/Backoffice';
+import Button from 'wix-style-react/Button';
 import Modal from 'wix-style-react/Modal';
 
 class FullScreenModal extends Component {

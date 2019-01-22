@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../../src/Deprecated/TextLink';
 import CodeExample from 'wix-storybook-utils/CodeExample';
 
 import ExampleStandard from './ExampleStandard';
@@ -19,7 +19,7 @@ export default {
   category: storySettings.kind,
   storyName: storySettings.storyName,
   component: TextLink,
-  componentPath: '../../src/TextLink',
+  componentPath: '../../../src/Deprecated/TextLink',
 
   componentProps: {
     dataHook: 'storybook-textlink',

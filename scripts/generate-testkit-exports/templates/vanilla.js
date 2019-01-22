@@ -1,5 +1,4 @@
-import ReactDOM from 'react-dom';
-
+/* eslint-disable no-unused-vars */
 import {
   testkitFactoryCreator,
   uniTestkitFactoryCreator,
@@ -14,15 +13,3 @@ export {
   linearProgressBarTestkitFactory,
   circularProgressBarTestkitFactory,
 } from 'wix-ui-backoffice/dist/src/testkit';
-
-import buttonDriverFactory from '../src/Deprecated/Button/Button.driver';
-import { buttonDriverFactory as buttonNextDriverFactory } from '../src/Button/Button.driver';
-
-export const buttonTestkitFactory = obj => {
-  const domInstance = ReactDOM.findDOMNode(obj.wrapper);
-  const hasUpgrade = domInstance.querySelector('[data-upgrade]');
-
-  return hasUpgrade
-    ? uniTestkitFactoryCreator(buttonNextDriverFactory)(obj)
-    : testkitFactoryCreator(buttonDriverFactory)(obj);
-};

@@ -109,12 +109,6 @@ export default {
     },
   },
 
-  Button: {
-    props: {
-      upgrade: true,
-    },
-  },
-
   ImageViewer: {
     props: {
       imageUrl: '',

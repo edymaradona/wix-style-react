@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from './PageHeader';
 import pageHeaderDriverFactory from './PageHeader.driver';
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
-import Button from '../Button';
+import Button from '../Deprecated/Button';
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import PropTypes from 'prop-types';
 

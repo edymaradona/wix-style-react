@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { mount } from 'enzyme';
-import Button from '../../Button';
+import Button from '../../Deprecated/Button';
 
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
 

@@ -16,7 +16,7 @@ import Checkbox from 'wix-style-react/Checkbox';
 import Card from 'wix-style-react/Card';
 import Page from 'wix-style-react/Page';
 import Button from 'wix-style-react/Button';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../src/Deprecated/TextLink';
 import Text from 'wix-style-react/Text';
 import { Edit, Duplicate, Upload } from 'wix-style-react/new-icons';
 import Highlighter from 'wix-style-react/Highlighter';

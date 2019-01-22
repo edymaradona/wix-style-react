@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import WixComponent from '../../BaseComponents/WixComponent';
 import Input from '../../Input';
 import Tooltip from '../../Tooltip';
-import Button from '../../Button';
+import Button from '../../Deprecated/Button';
 import X from '../../new-icons/X';
 import Check from '../../new-icons/Check';
 import styles from '../EditableSelector.scss';

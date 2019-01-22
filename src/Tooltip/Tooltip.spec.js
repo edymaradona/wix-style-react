@@ -63,13 +63,13 @@ describe('Tooltip', () => {
     );
     driver.mouseEnter();
     expect(driver.isShown()).toBeFalsy();
-    return resolveIn(30).then(() => {
+    return resolveIn(30).then(async () => {
       expect(driver.isShown()).toBeTruthy();
       const buttonTestkit = buttonTestkitFactory({
         wrapper: driver.getTooltipWrapper(),
         dataHook,
       });
-      expect(buttonTestkit.getButtonTextContent()).toBe('Button content');
+      expect(await buttonTestkit.getButtonTextContent()).toBe('Button content');
     });
   });
 

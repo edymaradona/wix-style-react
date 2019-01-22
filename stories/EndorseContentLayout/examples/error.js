@@ -1,7 +1,7 @@
 import React from 'react';
 
 import EndorseContentLayout from 'wix-style-react/EndorseContentLayout';
-import { Button } from 'wix-style-react/Backoffice';
+import Button from 'wix-style-react/Button';
 
 const secondaryCtaStyle = {
   fontSize: '14px',

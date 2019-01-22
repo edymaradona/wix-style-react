@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'wix-style-react/Modal';
-import { Button } from 'wix-style-react/Backoffice';
+import Button from 'wix-style-react/Button';
 import { MessageBoxFunctionalLayout } from 'wix-style-react/MessageBox';
 import { Container, Row, Col } from 'wix-style-react/Grid';
 import DatePicker from 'wix-style-react/DatePicker';

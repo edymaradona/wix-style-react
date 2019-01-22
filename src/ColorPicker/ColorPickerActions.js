@@ -1,7 +1,7 @@
 import React from 'react';
 import { func } from 'prop-types';
 
-import Button from '../Button';
+import Button from '../Deprecated/Button';
 import X from '../new-icons/X';
 import Check from '../new-icons/Check';
 

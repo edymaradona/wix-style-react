@@ -1,4 +1,4 @@
-import { buttonTestkitFactory } from '../../testkit';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver';
 
 import addItemDriverFactory from '../AddItem/AddItem.driver';
 import tooltipDriverFactory from '../Tooltip/Tooltip.driver';
@@ -25,9 +25,9 @@ const imageViewerDriverFactory = ({ element, eventTrigger }) => {
   const updateIcon = () => byHook(updateDataHook);
   const removeIcon = () => byHook(removeDataHook);
   const updateButton = () =>
-    buttonTestkitFactory({ wrapper: element, dataHook: updateDataHook });
+    buttonDriverFactory({ element: byHook(updateDataHook) });
   const removeButton = () =>
-    buttonTestkitFactory({ wrapper: element, dataHook: removeDataHook });
+    buttonDriverFactory({ element: byHook(removeDataHook) });
 
   return {
     getAddItemDataHook: () => addItemDataHook,

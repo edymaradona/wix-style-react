@@ -7,7 +7,7 @@ import Collapse from 'wix-style-react/Collapse';
 import FormField from 'wix-style-react/FormField';
 import Input from 'wix-style-react/Input';
 import Button from 'wix-style-react/Button';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../src/Deprecated/TextLink';
 import Tooltip from 'wix-style-react/Tooltip';
 
 export default class extends React.Component {

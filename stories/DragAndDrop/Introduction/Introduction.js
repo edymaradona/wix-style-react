@@ -7,7 +7,7 @@ import FAQ from './FAQ.md';
 import Roadmap from './Roadmap.md';
 import IntroductionExample from './IntroductionExample';
 import { linkTo } from '@storybook/addon-links';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../../src/Deprecated/TextLink';
 
 export default () => (
   <div>

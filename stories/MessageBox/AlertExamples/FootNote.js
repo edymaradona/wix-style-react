@@ -2,7 +2,7 @@
 import React from 'react';
 import { MessageBoxFunctionalLayout } from 'wix-style-react/MessageBox';
 import Text from 'wix-style-react/Text';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../../src/Deprecated/TextLink';
 
 export default () => (
   <MessageBoxFunctionalLayout

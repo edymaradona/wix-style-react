@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import style from './ImageViewer.scss';
 import Tooltip from '../Tooltip';
-import Button from '../Button';
+import Button from '../Deprecated/Button';
 import WixComponent from '../BaseComponents/WixComponent';
 import AddItem from '../AddItem/AddItem';
 

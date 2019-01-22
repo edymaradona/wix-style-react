@@ -2,7 +2,7 @@ import React from 'react';
 import { string, array, any } from 'prop-types';
 import LinkTo from '@storybook/addon-links/react';
 import Markdown from 'wix-storybook-utils/Markdown';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../src/Deprecated/TextLink';
 import ChevronRight from 'wix-style-react/new-icons/ChevronRight';
 
 import { description } from 'wix-storybook-utils/Sections';

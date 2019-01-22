@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from 'wix-style-react/Card';
 import { Add } from 'wix-style-react/new-icons';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../src/Deprecated/TextLink';
 import Button from 'wix-style-react/Button';
 import EmptyState from 'wix-style-react/EmptyState';
 

@@ -188,10 +188,7 @@ module.exports = {
     manualExport,
   },
 
-  Button: {
-    manualExport, // TODO: should be automated but can't because of the `upgrade` prop. Once it's gone, it can be automated again
-    unidriver,
-  },
+  Button: { unidriver },
 
   ImageViewer: {},
 
@@ -276,11 +273,6 @@ module.exports = {
 
   MessageBoxFunctionalLayout: {
     testkitPath: '../src/MessageBox/MessageBoxFunctionalLayout.driver',
-    skipSanityTest,
-  },
-
-  TextLinkLayout: {
-    testkitPath: '../src/Deprecated/TextLinkLayout/TextLinkLayout.driver',
     skipSanityTest,
   },
 

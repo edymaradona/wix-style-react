@@ -11,7 +11,7 @@ import {
 import Card from 'wix-style-react/Card';
 import Search from 'wix-style-react/Search';
 import Dropdown from 'wix-style-react/Dropdown';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../src/Deprecated/TextLink';
 import { ExternalLink } from 'wix-style-react/new-icons';
 
 import ImagePlaceholder from '../assets/ImagePlaceholder';

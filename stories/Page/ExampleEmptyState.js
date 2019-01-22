@@ -2,7 +2,7 @@ import React from 'react';
 
 import Page from 'wix-style-react/Page';
 import Button from 'wix-style-react/Button';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../src/Deprecated/TextLink';
 import EmptyState from 'wix-style-react/EmptyState';
 import { Add } from 'wix-style-react/new-icons';
 

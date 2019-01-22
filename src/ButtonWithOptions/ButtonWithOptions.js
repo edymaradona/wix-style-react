@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import WixComponent from '../BaseComponents/WixComponent';
 import DropdownLayout from '../DropdownLayout/DropdownLayout';
-import Button from '../Button';
+import Button from '../Deprecated/Button';
 import ButtonLayout from '../ButtonLayout';
 import ChevronDown from '../new-icons/ChevronDown';
 

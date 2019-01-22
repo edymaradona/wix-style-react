@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { linkTo } from '@storybook/addon-links';
 
-import TextLink from 'wix-style-react/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import Markdown from 'wix-storybook-utils/Markdown';
 import TabbedView from 'wix-storybook-utils/TabbedView';
 
@@ -23,14 +23,14 @@ storiesOf('4. Selection', module).add('4.1 Dropdown', () => (
 
       <lu>
         <li>
-          <TextLink
+          <TextButton
             onClick={linkTo('Components', 'Dropdown')}
-          >{`<Dropdown/>`}</TextLink>
+          >{`<Dropdown/>`}</TextButton>
         </li>
         <li>
-          <TextLink
+          <TextButton
             onClick={linkTo('Components', 'FormField')}
-          >{`<FormField/>`}</TextLink>
+          >{`<FormField/>`}</TextButton>
         </li>
       </lu>
 

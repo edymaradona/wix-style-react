@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextLink from 'wix-style-react/TextLink';
+import TextLink from '../../../src/Deprecated/TextLink';
 import Add from 'wix-style-react/new-icons/Add';
 
 const style = {
