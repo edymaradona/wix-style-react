@@ -31,13 +31,28 @@ describe('PageHeader', () => {
     eyes.it('should disaply title and subtitle with ellipsis', async () => {
       await initTest({ testName: '2. Long Title and Subtitle' });
     });
-    eyes.it('should disaply an opened dropdown (no ellipsis)', async () => {
-      await initTest({ testName: '3. Title with Dropdown' });
-      const dropdownTeskit = dropdownTestkitFactory({
-        dataHook: 'title-dropdown',
-      });
-      await dropdownTeskit.click();
-    });
+
+    eyes.it(
+      'should disaply an opened dropdown in title (no ellipsis)',
+      async () => {
+        await initTest({ testName: '3. Title with Dropdown' });
+        const dropdownTeskit = dropdownTestkitFactory({
+          dataHook: 'title-dropdown',
+        });
+        await dropdownTeskit.click();
+      },
+    );
+
+    eyes.it(
+      'should disaply an opened dropdown in subtitle (no ellipsis)',
+      async () => {
+        await initTest({ testName: '4. Subtitle with Dropdown' });
+        const dropdownTeskit = dropdownTestkitFactory({
+          dataHook: 'subtitle-dropdown',
+        });
+        await dropdownTeskit.click();
+      },
+    );
   });
 
   describe('RTL', () => {

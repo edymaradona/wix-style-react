@@ -185,6 +185,7 @@ export default class PageHeader extends WixComponent {
                     data-hook="page-header-subtitle"
                   >
                     <Text
+                      ellipsis={typeof subtitle === 'string'}
                       light={isDarkTheme(hasBackgroundImage, minimized)}
                       secondary={!isDarkTheme(hasBackgroundImage, minimized)}
                     >
