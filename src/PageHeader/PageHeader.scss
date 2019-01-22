@@ -1,5 +1,11 @@
 @import '../common';
 
+// Allow flex-child to shrink when there is a truncated descendant
+// See: https://css-tricks.com/flexbox-truncated-text/#article-header-id-3
+@mixin truncatedFlexChild {
+  min-width: 0;
+}
+
 .header-container {
   display: flex;
   justify-content: flex-start;
@@ -9,6 +15,7 @@
 
 .header {
   flex: 1;
+  @include truncatedFlexChild;
 }
 
 .breadcrumbs-container {
@@ -68,10 +75,14 @@
   }
 }
 
+.titleColumn {
+  @include truncatedFlexChild;
+}
+
 .title {
   h2 {
     margin: 0;
-    height: 48px;
+    height: 48px; // TODO: I think we should have this height on the 'title' class and not necessarily on h2 tags. Also Heading is no h1 not h2, so This is kind of redundant.
   }
 }
 
