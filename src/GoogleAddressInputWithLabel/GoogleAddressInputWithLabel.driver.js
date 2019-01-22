@@ -1,6 +1,6 @@
 import inputAreaWithLabelCompositeDriverFactory from '../Composite/InputAreaWithLabelComposite/InputAreaWithLabelComposite.driver';
 
-const GoogleAddressInputWithLabelDriverFactory = ({ element }) => {
+const googleAddressInputWithLabelDriverFactory = ({ element }) => {
   const input = element.childNodes[1];
 
   return {

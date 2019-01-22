@@ -124,4 +124,4 @@ export const fieldWithSelectionCompositeTestkitFactory = testkitFactoryCreator(l
 export const radioButtonTestkitFactory = testkitFactoryCreator(load('../src/RadioGroup/RadioButton/RadioButton.driver'));
 export const messageBoxMarketerialLayoutTestkitFactory = testkitFactoryCreator(load('../src/MessageBox/MessageBoxMarketerialLayout.driver'));
 export const messageBoxFunctionalLayoutTestkitFactory = testkitFactoryCreator(load('../src/MessageBox/MessageBoxFunctionalLayout.driver'));
-export const textLinkLayoutTestkitFactory = testkitFactoryCreator(load('../src/BaseComponents/TextLinkLayout/TextLinkLayout.driver'));
+export const textLinkLayoutTestkitFactory = testkitFactoryCreator(load('../src/Deprecated/TextLinkLayout/TextLinkLayout.driver'));

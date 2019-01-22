@@ -121,4 +121,4 @@ export const fieldWithSelectionCompositeTestkitFactory = enzymeTestkitFactoryCre
 export const radioButtonTestkitFactory = enzymeTestkitFactoryCreator(load('../src/RadioGroup/RadioButton/RadioButton.driver'));
 export const messageBoxMarketerialLayoutTestkitFactory = enzymeTestkitFactoryCreator(load('../src/MessageBox/MessageBoxMarketerialLayout.driver'));
 export const messageBoxFunctionalLayoutTestkitFactory = enzymeTestkitFactoryCreator(load('../src/MessageBox/MessageBoxFunctionalLayout.driver'));
-export const textLinkLayoutTestkitFactory = enzymeTestkitFactoryCreator(load('../src/BaseComponents/TextLinkLayout/TextLinkLayout.driver'));
+export const textLinkLayoutTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Deprecated/TextLinkLayout/TextLinkLayout.driver'));

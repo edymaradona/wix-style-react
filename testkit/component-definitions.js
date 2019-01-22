@@ -4,11 +4,9 @@ import AllComponents from './all-components';
 
 const {
   Popover,
-  Dropdown,
   MultiSelect,
   AutoComplete,
   Input,
-  InputArea,
   Label,
   RichTextArea,
   Notification,

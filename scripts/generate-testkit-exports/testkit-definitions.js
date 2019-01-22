@@ -280,7 +280,7 @@ module.exports = {
   },
 
   TextLinkLayout: {
-    testkitPath: '../src/BaseComponents/TextLinkLayout/TextLinkLayout.driver',
+    testkitPath: '../src/Deprecated/TextLinkLayout/TextLinkLayout.driver',
     skipSanityTest,
   },
 
