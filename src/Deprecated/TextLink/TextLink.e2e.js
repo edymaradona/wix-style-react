@@ -4,7 +4,7 @@ import autoExampleDriver from 'wix-storybook-utils/AutoExampleDriver';
 import { getStoryUrl, waitForVisibilityOf } from 'wix-ui-test-utils/protractor';
 import { textLinkTestkitFactory } from '../../testkit/protractor';
 
-import { storySettings } from '../../stories/TextLink/storySettings';
+import { storySettings } from '../../../stories/Deprecated/TextLink/storySettings';
 
 const storyUrl = getStoryUrl(storySettings.kind, storySettings.storyName);
 const driver = textLinkTestkitFactory({ dataHook: 'storybook-textlink' });

@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links';
 import { storySettings } from './storySettings';
 
 import EmptyState from '../../src/EmptyState';
-import TextLink from '../../src/TextLink';
+import TextLink from '../../Deprecated/src/TextLink';
 import Heading from '../../src/Heading';
 
 import Add from '../../src/new-icons/Add';

@@ -1,7 +1,7 @@
 import ReactTestUtils from 'react-dom/test-utils';
 
-import { ThemeOptions } from '../Deprecated/TextLinkLayout/TextLinkLayout';
-import textLinkLayoutDriverFactory from '../Deprecated/TextLinkLayout/TextLinkLayout.driver';
+import { ThemeOptions } from '../TextLinkLayout/TextLinkLayout';
+import textLinkLayoutDriverFactory from '../TextLinkLayout/TextLinkLayout.driver';
 
 const textLinkDriverFactory = ({ element }) => {
   const textLinkLayoutElement = element ? element.children[0] : null;

@@ -11,7 +11,7 @@ import { createRendererWithDriver, cleanup } from '../../test/utils/unit';
 
 import Notification from './Notification';
 import Button from '../Button';
-import TextLink from '../TextLink';
+import TextLink from '../Deprecated/TextLink';
 
 const renderNotificationWithProps = (props = {}) => (
   <Notification {...props}>

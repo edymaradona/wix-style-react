@@ -161,7 +161,7 @@ export const imageViewerTestkitFactory = protractorTestkitFactoryCreator(
   imageViewerDriverFactory,
 );
 
-import textLinkDriverFactory from '../src/TextLink/TextLink.protractor.driver';
+import textLinkDriverFactory from '../src/Deprecated/TextLink/TextLink.protractor.driver';
 
 export const textLinkTestkitFactory = protractorTestkitFactoryCreator(
   textLinkDriverFactory,

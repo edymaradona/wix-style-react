@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../Deprecated/Button';
-import TextLink from '../../TextLink';
+import TextLink from '../../Deprecated/TextLink';
 
 const ActionButton = ({ children, onClick, type, link }) => {
   const commonProps = {
