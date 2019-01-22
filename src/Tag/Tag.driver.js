@@ -2,7 +2,7 @@ import ReactTestUtils from 'react-dom/test-utils';
 import { isClassExists } from '../../test/utils';
 
 import { testkitFactoryCreator } from 'wix-ui-test-utils/vanilla';
-import buttonDriverFactory from '../Backoffice/Button/Button.driver';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver';
 import { dataHooks } from './Tag.helpers';
 
 const buttonTestkitFactory = testkitFactoryCreator(buttonDriverFactory);

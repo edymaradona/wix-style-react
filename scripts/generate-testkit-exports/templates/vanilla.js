@@ -15,7 +15,7 @@ export {
   circularProgressBarTestkitFactory,
 } from 'wix-ui-backoffice/dist/src/testkit';
 
-import buttonDriverFactory from '../src/Backoffice/Button/Button.driver';
+import buttonDriverFactory from '../src/Deprecated/Button/Button.driver';
 import { buttonDriverFactory as buttonNextDriverFactory } from '../src/Button/Button.driver';
 
 export const buttonTestkitFactory = obj => {

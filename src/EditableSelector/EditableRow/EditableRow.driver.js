@@ -1,5 +1,5 @@
 import inputDriverFactory from '../../Input/Input.driver';
-import buttonDriverFactory from '../../Backoffice/Button/Button.driver';
+import buttonDriverFactory from '../../Deprecated/Button/Button.driver';
 
 const editableRowDriverFactory = ({ element }) => {
   const inputDriver = inputDriverFactory({

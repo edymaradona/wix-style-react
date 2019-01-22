@@ -1,5 +1,5 @@
 import { testkitFactoryCreator } from 'wix-ui-test-utils/vanilla';
-import buttonDriverFactory from '../Backoffice/Button/Button.driver';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver';
 
 import styles from './styles.scss';
 

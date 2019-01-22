@@ -1,5 +1,5 @@
 import { isClassExists } from '../../test/utils';
-import buttonDriverFactory from '../Backoffice/Button/Button.driver.js';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver.js';
 
 const titleElement = element =>
   element.querySelector('[data-hook="page-header-title"] h1');

@@ -5,10 +5,8 @@ import Heading from '../Heading';
 import Text from '../Text';
 import classNames from 'classnames';
 import CloseButton from '../CloseButton';
-import deprecationLog from '../utils/deprecationLog';
-import { allValidators } from '../utils/propTypes';
 
-import Button from '../Backoffice/Button';
+import Button from '../Deprecated/Button';
 
 import * as styles from './MessageBoxMarketerialLayout.scss';
 

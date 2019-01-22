@@ -10,7 +10,7 @@ export const inputTestkitFactory = puppeteerTestkitFactoryCreator(
   inputDriverFactory,
 );
 
-import buttonDriverFactory from '../src/Backoffice/Button/Button.puppeteer.driver';
+import buttonDriverFactory from '../src/Deprecated/Button/Button.puppeteer.driver';
 import { buttonDriverFactory as buttonNextDriverFactory } from '../src/Button/Button.driver';
 
 export const buttonTestkitFactory = obj =>

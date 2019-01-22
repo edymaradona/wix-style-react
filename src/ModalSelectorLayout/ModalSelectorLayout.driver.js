@@ -1,7 +1,7 @@
 import ReactTestUtils from 'react-dom/test-utils';
 import { testkitFactoryCreator } from 'wix-ui-test-utils/vanilla';
 import loaderDriverFactory from '../Loader/Loader.driver';
-import buttonDriverFactory from '../Backoffice/Button/Button.driver';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver';
 import selectorDriverFactory from '../Selector/Selector.driver';
 import searchDriverFactory from '../Search/Search.driver';
 import textDriverFactory from '../Text/Text.driver';

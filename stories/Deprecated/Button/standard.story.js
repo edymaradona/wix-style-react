@@ -1,4 +1,4 @@
-import Button from 'wix-style-react/Button';
+import Button from '../../../src/Deprecated/Button';
 
 import { storySettings } from './storySettings';
 
@@ -8,7 +8,7 @@ export default {
   category: storySettings.kind,
   storyName: storySettings.storyName,
   component: Button,
-  componentPath: '../../../src/Backoffice/Button',
+  componentPath: '../../../src/Deprecated/Button',
 
   componentProps: {
     theme: 'fullblue',

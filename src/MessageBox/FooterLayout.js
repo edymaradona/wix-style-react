@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Backoffice/Button';
+import Button from '../Deprecated/Button';
 import * as styles from './FooterLayout.scss';
 import classNames from 'classnames';
 

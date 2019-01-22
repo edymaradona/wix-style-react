@@ -1,6 +1,6 @@
 import popoverMenuDriverFactory from '../PopoverMenu/PopoverMenu.driver';
 import tooltipDriverFactory from '../Tooltip/Tooltip.driver';
-import buttonDriverFactory from '../Backoffice/Button/Button.driver.js';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver.js';
 import { INTERNAL_DRIVER_SYMBOL } from '../../test/utils/private-drivers';
 
 const tableActionCellDriverFactory = ({ element }) => {

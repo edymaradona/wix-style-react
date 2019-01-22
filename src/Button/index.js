@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import ButtonOld from '../Backoffice/Button';
+import ButtonOld from '../Deprecated/Button';
 import ButtonNew from './Button';
 import deprecationLog from '../utils/deprecationLog';
 import { allValidators } from '../utils/propTypes';

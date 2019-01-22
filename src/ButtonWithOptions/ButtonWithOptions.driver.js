@@ -1,4 +1,4 @@
-import buttonDriverFactory from '../Backoffice/Button/Button.driver.js';
+import buttonDriverFactory from '../Deprecated/Button/Button.driver.js';
 import dropdownLayoutDriverFactory from '../DropdownLayout/DropdownLayout.driver';
 
 const ButtonWithOptionsDriverFactory = ({ element }) => {
