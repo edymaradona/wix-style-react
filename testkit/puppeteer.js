@@ -10,14 +10,6 @@ export const inputTestkitFactory = puppeteerTestkitFactoryCreator(
   inputDriverFactory,
 );
 
-import buttonDriverFactory from '../src/Deprecated/Button/Button.puppeteer.driver';
-import { buttonDriverFactory as buttonNextDriverFactory } from '../src/Button/Button.driver';
-
-export const buttonTestkitFactory = obj =>
-  obj.wrapper && obj.wrapper.$(`[data-upgrade]`)
-    ? puppeteerUniTestkitFactoryCreator(buttonNextDriverFactory)(obj)
-    : puppeteerTestkitFactoryCreator(buttonDriverFactory)(obj);
-
 import formFieldDriverFactory from '../src/FormField/FormField.puppeteer.driver';
 
 export const formFieldTestkitFactory = puppeteerTestkitFactoryCreator(
@@ -105,4 +97,10 @@ import { boxDriverFactory } from '../src/Box/Box.driver';
 
 export const boxTestkitFactory = puppeteerUniTestkitFactoryCreator(
   boxDriverFactory,
+);
+
+import { buttonDriverFactory } from '../src/Button/Button.driver';
+
+export const buttonTestkitFactory = puppeteerUniTestkitFactoryCreator(
+  buttonDriverFactory,
 );

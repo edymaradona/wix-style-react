@@ -34,14 +34,6 @@ export const inputAreaTestkitFactory = protractorTestkitFactoryCreator(
   inputAreaDriverFactory,
 );
 
-import buttonDriverFactory from '../src/Deprecated/Button/Button.protractor.driver';
-import { buttonDriverFactory as buttonNextDriverFactory } from '../src/Button/Button.driver';
-
-export const buttonTestkitFactory = obj =>
-  obj.wrapper && obj.wrapper.$(`[data-upgrade]`)
-    ? protractorUniTestkitFactoryCreator(buttonNextDriverFactory)(obj)
-    : protractorTestkitFactoryCreator(buttonDriverFactory)(obj);
-
 import pageDriverFactory from '../src/Page/Page.protractor.driver';
 
 export const pageTestkitFactory = protractorTestkitFactoryCreator(
@@ -398,4 +390,10 @@ import { boxDriverFactory } from '../src/Box/Box.driver';
 
 export const boxTestkitFactory = protractorUniTestkitFactoryCreator(
   boxDriverFactory,
+);
+
+import { buttonDriverFactory } from '../src/Button/Button.driver';
+
+export const buttonTestkitFactory = protractorUniTestkitFactoryCreator(
+  buttonDriverFactory,
 );
