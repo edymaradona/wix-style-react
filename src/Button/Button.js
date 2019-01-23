@@ -19,6 +19,7 @@ class Button extends Component {
       'dark',
       'light',
       'transparent',
+      'premium-light'
     ]),
     /** Underline of Button content */
     priority: oneOf(['primary', 'secondary']),
