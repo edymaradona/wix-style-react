@@ -1,9 +1,7 @@
 import React from 'react';
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
 import statsWidgetDriverFactory from './StatsWidget.driver';
-import StatsWidget, { deprecationMessage } from './StatsWidget';
-import ButtonWithOptions from '../ButtonWithOptions';
-import { depLogger } from '../utils/deprecationLog';
+import StatsWidget from './StatsWidget';
 
 describe('StatsWidget', () => {
   const createDriver = createDriverFactory(statsWidgetDriverFactory);
@@ -230,86 +228,6 @@ describe('StatsWidget', () => {
       expect(consoleErrorSpy).toHaveBeenCalledWith(
         'Warning: Failed prop type: StatsWidget: Invalid Prop children, only <StatsWidget.FilterButton/> is allowed\n    in StatsWidget',
       );
-    });
-  });
-
-  describe('deprecated usage with ButtonWithOptions', () => {
-    let deprecationLogSpy;
-
-    beforeEach(() => {
-      deprecationLogSpy = jest
-        .spyOn(depLogger, 'log')
-        .mockImplementation(jest.fn());
-    });
-
-    afterEach(() => {
-      // We'll expect the prop types error to be thrown
-      expect(deprecationLogSpy).toHaveBeenCalledWith(deprecationMessage);
-
-      deprecationLogSpy.mockRestore();
-    });
-
-    it('should show filter with ButtonWithOptions inside', () => {
-      const children = (
-        <StatsWidget.Filter selectedId={1} dataHook="stats-widget-filter">
-          <ButtonWithOptions.Button />
-          {[
-            <ButtonWithOptions.Option key={1} id="1">
-              value
-            </ButtonWithOptions.Option>,
-          ]}
-        </StatsWidget.Filter>
-      );
-      createComponent({ title, statistics, children });
-      expect(
-        driver
-          .getFilterDriver('stats-widget-filter')
-          .dropdownLayoutDriver.exists(),
-      ).toBe(true);
-    });
-
-    it('filters should have selectable options', () => {
-      const onSelectStub = jest.fn();
-
-      const children = (
-        <StatsWidget.Filter
-          selectedId={1}
-          dataHook="stats-widget-filter"
-          onSelect={onSelectStub}
-        >
-          <ButtonWithOptions.Button />
-          {[
-            <ButtonWithOptions.Option id="1" key={1}>
-              value
-            </ButtonWithOptions.Option>,
-          ]}
-        </StatsWidget.Filter>
-      );
-      createComponent({ title, statistics, children });
-      driver
-        .getFilterDriver('stats-widget-filter')
-        .dropdownLayoutDriver.clickAtOption(0);
-      expect(onSelectStub).toHaveBeenCalled();
-    });
-
-    it('should show filters with option value specified', () => {
-      const value = 'Last Week';
-      const children = (
-        <StatsWidget.Filter selectedId={1} dataHook="stats-widget-filter">
-          <ButtonWithOptions.Button />
-          {[
-            <ButtonWithOptions.Option id="1" key={1}>
-              {value}
-            </ButtonWithOptions.Option>,
-          ]}
-        </StatsWidget.Filter>
-      );
-      createComponent({ title, statistics, children });
-      expect(
-        driver
-          .getFilterDriver('stats-widget-filter')
-          .dropdownLayoutDriver.optionsContent(),
-      ).toContain(value);
     });
   });
 });
