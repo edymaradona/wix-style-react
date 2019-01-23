@@ -48,7 +48,7 @@ const ButtonBlock = values => {
       <Cell span={6}>
         {skins.map(skin => (
           <div style={{ margin: '5px 0' }}>
-            <Button {...rest} upgrade skin={skin}>
+            <Button {...rest} skin={skin}>
               Click me
             </Button>
           </div>
@@ -57,7 +57,7 @@ const ButtonBlock = values => {
       <Cell span={6}>
         {skins.map(skin => (
           <div style={{ margin: '5px 0' }}>
-            <Button {...rest} upgrade skin={skin} disabled>
+            <Button {...rest} skin={skin} disabled>
               Click me
             </Button>
           </div>

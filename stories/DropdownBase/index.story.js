@@ -34,20 +34,18 @@ const options = [
 const children = [
   {
     label: 'Regular React node',
-    value: <Button upgrade>I am a plain Button that does nothing!</Button>,
+    value: <Button>I am a plain Button that does nothing!</Button>,
   },
   {
     label: 'Render prop on click',
     value: ({ toggle, selectedOption = {} }) => (
-      <Button upgrade onClick={toggle}>
-        {selectedOption.value || 'Click me'}
-      </Button>
+      <Button onClick={toggle}>{selectedOption.value || 'Click me'}</Button>
     ),
   },
   {
     label: 'Render prop on hover',
     value: ({ open, close, selectedOption = {} }) => (
-      <Button upgrade onMouseEnter={open} onMouseLeave={close}>
+      <Button onMouseEnter={open} onMouseLeave={close}>
         {selectedOption.value || 'Hover me'}
       </Button>
     ),

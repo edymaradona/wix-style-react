@@ -12,7 +12,6 @@ export default {
   componentPath: '../../src/Button/Button.js',
 
   componentProps: {
-    upgrade: true,
     as: 'button',
     children: 'Button',
     skin: 'standard',
