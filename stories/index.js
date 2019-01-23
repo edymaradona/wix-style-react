@@ -154,8 +154,3 @@ import './Box/testStory';
 
 // The generated test component
 import './GeneratedTestComponent/index.story';
-
-// Deprecated
-import './Deprecated/Button/standard.story.js';
-import './ButtonLayout.story.js'; // 5.0 ButtonLayout
-import './Deprecated/TextLink/index.story.js'; // 5.8 Text Link
