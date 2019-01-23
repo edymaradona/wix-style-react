@@ -1,8 +1,7 @@
-/* eslint-disable no-console */
+import React from 'react';
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
 import statsWidgetDriverFactory from './StatsWidget.driver';
 import StatsWidget from './StatsWidget';
-import ButtonWithOptions from '../ButtonWithOptions';
 
 describe('StatsWidget', () => {
   const createDriver = createDriverFactory(statsWidgetDriverFactory);
@@ -51,22 +50,9 @@ describe('StatsWidget', () => {
 
   let driver;
 
-  const stub = (console.error = jest.fn());
-
   function createComponent(props) {
     driver = createDriver(<StatsWidget {...props} />);
   }
-
-  let React;
-
-  beforeEach(() => {
-    React = require('react');
-  });
-
-  afterEach(() => {
-    jest.resetModules();
-    stub.mockReset();
-  });
 
   it('should have correct title', () => {
     createComponent({ title, statistics });
@@ -112,99 +98,136 @@ describe('StatsWidget', () => {
     expect(driver.getStatisticPercentClass(2)).not.toContain('isPositive');
   });
 
-  it('should show filter with ButtonWithOptions inside', () => {
+  it('should show filter with DropdownBase inside', () => {
     const children = (
-      <StatsWidget.Filter
+      <StatsWidget.FilterButton
+        open
         selectedId={1}
         dataHook="stats-widget-filter"
-        onSelect={stub}
-      >
-        <ButtonWithOptions.Button />
-        {[<ButtonWithOptions.Option key={1}>value</ButtonWithOptions.Option>]}
-      </StatsWidget.Filter>
+        options={[{ id: 1, value: 'value' }]}
+      />
     );
     createComponent({ title, statistics, children });
     expect(
       driver
-        .getFilterDriver('stats-widget-filter')
+        .getFilterButtonDriver('stats-widget-filter')
         .dropdownLayoutDriver.exists(),
     ).toBe(true);
   });
 
   it('filters should have selectable options', () => {
     const onSelectStub = jest.fn();
+
     const children = (
-      <StatsWidget.Filter
+      <StatsWidget.FilterButton
+        open
         selectedId={1}
         dataHook="stats-widget-filter"
         onSelect={onSelectStub}
-      >
-        <ButtonWithOptions.Button />
-        {[
-          <ButtonWithOptions.Option id="1" key={1}>
-            value
-          </ButtonWithOptions.Option>,
-        ]}
-      </StatsWidget.Filter>
+        options={[{ id: 1, value: 'value' }]}
+      />
     );
     createComponent({ title, statistics, children });
     driver
-      .getFilterDriver('stats-widget-filter')
+      .getFilterButtonDriver('stats-widget-filter')
       .dropdownLayoutDriver.clickAtOption(0);
-    expect(onSelectStub).toHaveBeenCalled();
+    expect(onSelectStub).toHaveBeenCalledWith({ id: 1, value: 'value' });
   });
 
   it('should show filters with option value specified', () => {
     const value = 'Last Week';
     const children = (
-      <StatsWidget.Filter
+      <StatsWidget.FilterButton
+        open
         selectedId={1}
         dataHook="stats-widget-filter"
-        onSelect={stub}
-      >
-        <ButtonWithOptions.Button />
-        {[<ButtonWithOptions.Option key={1}>{value}</ButtonWithOptions.Option>]}
-      </StatsWidget.Filter>
+        options={[{ id: 1, value }]}
+      />
     );
     createComponent({ title, statistics, children });
     expect(
       driver
-        .getFilterDriver('stats-widget-filter')
+        .getFilterButtonDriver('stats-widget-filter')
         .dropdownLayoutDriver.optionsContent(),
     ).toContain(value);
   });
 
-  it('should not initialize component with 1 bad child', () => {
-    const PageRequiredChildrenArrayError =
-      'Warning: Failed prop type: Invalid prop `children` of type `object` supplied to `StatsWidget`, expected an array.\n    in StatsWidget';
-    createComponent({ title, statistics, children: <div /> });
+  describe('propTypes validation', () => {
+    let consoleErrorSpy;
 
-    expect(stub).toHaveBeenCalledWith(PageRequiredChildrenArrayError);
-  });
+    const createChildren = n =>
+      Array(n)
+        .fill()
+        .map((v, i) => (
+          <StatsWidget.FilterButton
+            open
+            key={i}
+            selectedId={1}
+            dataHook="stats-widget-filter"
+            options={[{ id: 1, value: 'value' }]}
+          />
+        ));
 
-  it('should not initialize component with percent which are not a numbers', () => {
-    const wrongStatistics = [
-      {
-        title: '10$',
-        subtitle: 'Revenue',
-        percent: '15%',
-      },
-      {
-        title: '2',
-        subtitle: 'Products',
-        percent: '-15%',
-      },
-      {
-        title: '1',
-        subtitle: 'Transactions',
-        percent: '0',
-      },
-    ];
+    beforeEach(() => {
+      consoleErrorSpy = jest
+        .spyOn(global.console, 'error')
+        .mockImplementation(jest.fn());
+    });
 
-    const PageRequiredChildrenArrayError =
-      'Warning: Failed prop type: Invalid prop `statistics[0].percent` of type `string` supplied to `StatsWidget`, expected `number`.\n    in StatsWidget';
-    createComponent({ title, statistics: wrongStatistics });
+    afterEach(() => {
+      consoleErrorSpy.mockRestore();
+    });
 
-    expect(stub).toHaveBeenCalledWith(PageRequiredChildrenArrayError);
+    it('should not initialize component with percent which are not a numbers', () => {
+      const wrongStatistics = [
+        {
+          title: '10$',
+          subtitle: 'Revenue',
+          percent: '15%',
+        },
+        {
+          title: '2',
+          subtitle: 'Products',
+          percent: '-15%',
+        },
+        {
+          title: '1',
+          subtitle: 'Transactions',
+          percent: '0',
+        },
+      ];
+
+      const PageRequiredChildrenArrayError =
+        'Warning: Failed prop type: Invalid prop `statistics[0].percent` of type `string` supplied to `StatsWidget`, expected `number`.\n    in StatsWidget';
+      createComponent({ title, statistics: wrongStatistics });
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        PageRequiredChildrenArrayError,
+      );
+    });
+
+    it('should throw when there are more than 3 children', () => {
+      createComponent({
+        title,
+        statistics,
+        children: createChildren(4),
+      });
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        'Warning: Failed prop type: Invalid Prop children, maximum amount of filters are 3\n    in StatsWidget',
+      );
+    });
+
+    it('should throw when children are not <StatsWidget.FilterButton/>', () => {
+      createComponent({
+        title,
+        statistics,
+        children: [<div key="1" />, <div key="2" />, <div key="3" />],
+      });
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        'Warning: Failed prop type: StatsWidget: Invalid Prop children, only <StatsWidget.FilterButton/> is allowed\n    in StatsWidget',
+      );
+    });
   });
 });

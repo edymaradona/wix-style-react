@@ -22,7 +22,7 @@ export default class GoogleMapsLoader extends React.Component {
     if (!window.google) {
       const googleScript = document.createElement('script');
       googleScript.src =
-        '//maps.googleapis.com/maps/api/js?client=gme-wixcomltd1&libraries=places&language=iwp';
+        '//maps.googleapis.com/maps/api/js?key=AIzaSyCZodLeNCWC7pnp6-5CoRfW2MjcyM7sijY&libraries=places&language=iwp';
       googleScript.onload = () =>
         this.setState({ dependencyStatus: STATUS.success });
       googleScript.onerror = () =>

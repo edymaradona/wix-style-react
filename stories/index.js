@@ -40,7 +40,6 @@ import './MultiSelectComposite'; // 3.8 + MultiSelectComposite
 import './Search/index.story'; // 3.9 Search
 import './ImageViewer/index.story'; // 3.10 ImageViewer
 import './FilePicker'; // 3.10 + FilePicker
-import './GoogleAddressInput'; // 3.11 GoogleAddressInput
 
 // 4. Selection
 import './Dropdown/DropdownStory.js'; // 4.1 Dropdown
@@ -52,7 +51,6 @@ import './CheckBox/index.story.js'; // 4.2 Checkbox
 import './RadioGroup.story.js'; // 4.3 RadioGroup
 import './ToggleSwitch/index.story'; // 4.4 ToggleSwitch
 import './Slider'; // 4.7 Slider
-import './GoogleAddressInputWithLabel'; // 4.8 Google address input
 
 // 5. Buttons
 import './Button/index.story.js'; // 5.1 Standard
@@ -105,6 +103,7 @@ import './Avatar/Avatar.story'; // 12.6 Avatar
 import './Highlighter.story.js'; // Highlighter
 
 // Components API
+import './Box/index.story.js';
 import './components/Calendar/index.story';
 import './components/CalendarPanel/index.story';
 import './CalendarPanelFooter/index.story';
@@ -115,6 +114,7 @@ import './components/Dropdown/Dropdown.story.js';
 import './DropdownBase/index.story';
 import './FormField/FormField.story.js';
 import './GenericModalLayout/GenericModalLayout.story.js';
+import './GoogleAddressInput/index.story.js';
 import './Heading/index.story';
 import './Input';
 import './InputArea/index.story.js';
@@ -125,7 +125,6 @@ import './Popover/index.story';
 import './Proportion/index.story.js';
 import './Skeleton.story.js';
 import './Text/index.story';
-import './Box/index.story.js';
 
 // Styling
 import './Typography/TypographyClassesStory';
@@ -158,7 +157,5 @@ import './GeneratedTestComponent/index.story';
 
 // Deprecated
 import './Deprecated/Button/standard.story.js';
-import './Deprecated/IconWithOptions'; // IconWithOptions
-import './Deprecated/ButtonWithOptions'; // ButtonWithOptions
 import './ButtonLayout.story.js'; // 5.0 ButtonLayout
 import './Deprecated/TextLink/index.story.js'; // 5.8 Text Link

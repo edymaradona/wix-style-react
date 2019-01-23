@@ -1,7 +1,6 @@
 import React from 'react';
 import StatsWidget from '../../src/StatsWidget';
 import styles from './ExampleStatsWidget.scss';
-import ButtonWithOptions from '../../src/ButtonWithOptions';
 import { Container } from '../../src/Grid';
 
 const statistics = [
@@ -28,21 +27,6 @@ const dropdownOption = [
   { id: 2, value: 'This week' },
 ];
 
-const optionsArray = dropdownOption.map(option => {
-  const { value, ...props } = option;
-  return (
-    <ButtonWithOptions.Option key={option.id} {...props}>
-      {value}
-    </ButtonWithOptions.Option>
-  );
-});
-
-const ButtonWithOptionsProps = {
-  theme: 'no-border',
-  dataHook: 'StatsWidgetFilter',
-  selectedId: 1,
-};
-
 export default () => (
   <Container>
     <div data-hook="card-example" className={styles.statsWidgetWrapper}>
@@ -50,10 +34,11 @@ export default () => (
         title="Let's see what's going on with your store"
         statistics={statistics}
       >
-        <StatsWidget.Filter {...ButtonWithOptionsProps}>
-          <ButtonWithOptions.Button />
-          {optionsArray}
-        </StatsWidget.Filter>
+        <StatsWidget.FilterButton
+          dataHook="StatsWidgetFilter"
+          initialSelectedId={1}
+          options={dropdownOption}
+        />
       </StatsWidget>
     </div>
   </Container>

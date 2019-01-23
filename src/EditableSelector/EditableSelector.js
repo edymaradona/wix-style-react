@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import WixComponent from '../BaseComponents/WixComponent';
 import Selector from '../Selector';
 import Text from '../Text';
-import ButtonWithOptions from '../ButtonWithOptions/ButtonWithOptions';
+import Button from '../Button';
+import IconButton from '../IconButton';
 import EditableRow from './EditableRow/EditableRow';
 import styles from './EditableSelector.scss';
 import Add from '../new-icons/Add';
@@ -111,24 +112,26 @@ class EditableSelector extends WixComponent {
                   onToggle={id => this.onOptionToggle(id)}
                 />
                 <div className={styles.optionMenu}>
-                  <ButtonWithOptions.Button
+                  <IconButton
                     onClick={() => this.deleteItem(index)}
                     dataHook="delete-item"
                     type="button"
-                    height="small"
-                    theme="icon-greybackground"
+                    size="small"
+                    skin="inverted"
                   >
-                    <Delete />
-                  </ButtonWithOptions.Button>
+                    <span>
+                      <Delete />
+                    </span>
+                  </IconButton>
                   <div className={styles.editRow}>
-                    <ButtonWithOptions.Button
+                    <Button
+                      upgrade
                       onClick={() => this.editItem(index)}
                       dataHook="edit-item"
-                      height="small"
-                      theme="fullblue"
+                      size="small"
                     >
                       {editButtonText}
-                    </ButtonWithOptions.Button>
+                    </Button>
                   </div>
                 </div>
               </div>

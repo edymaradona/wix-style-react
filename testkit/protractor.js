@@ -107,12 +107,6 @@ export const dropdownLayoutTestkitFactory = protractorTestkitFactoryCreator(
   dropdownLayoutDriverFactory,
 );
 
-import buttonWithOptionsDriverFactory from '../src/ButtonWithOptions/ButtonWithOptions.protractor.driver';
-
-export const buttonWithOptionsTestkitFactory = protractorTestkitFactoryCreator(
-  buttonWithOptionsDriverFactory,
-);
-
 import filePickerDriverFactory from '../src/FilePicker/FilePicker.protractor.driver';
 
 export const filePickerTestkitFactory = protractorTestkitFactoryCreator(
@@ -201,12 +195,6 @@ import editableSelectorDriverFactory from '../src/EditableSelector/EditableSelec
 
 export const editableSelectorTestkitFactory = protractorTestkitFactoryCreator(
   editableSelectorDriverFactory,
-);
-
-import iconWithOptionsDriverFactory from '../src/IconWithOptions/IconWithOptions.protractor.driver';
-
-export const iconWithOptionsTestkitFactory = protractorTestkitFactoryCreator(
-  iconWithOptionsDriverFactory,
 );
 
 import searchDriverFactory from '../src/Search/Search.protractor.driver';

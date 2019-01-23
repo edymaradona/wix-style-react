@@ -8,11 +8,15 @@ import {
   importExample,
   liveCode,
 } from 'wix-storybook-utils/Sections';
+import { Image, Hint, More } from 'wix-style-react/new-icons';
 
 import { storySettings } from './storySettings';
 import Box from '../../src/Box';
+import Text from '../../src/Text';
+import IconButton from '../../src/IconButton';
 import Button from '../../src/Button';
 import propExplanations from './propExplanations';
+import ExampleEventItem from '!raw-loader!./examples/ExampleEventItem';
 
 const childrenExamples = [
   {
@@ -126,6 +130,17 @@ export default {
         // Styling
         description({ text: propExplanations.styling.description }),
         propExplanationLiveExample(propExplanations.styling.example),
+
+        description({
+          title: 'Examples',
+        }),
+
+        liveCode({
+          title: 'Event Item (multiple boxes)',
+          compact: true,
+          source: ExampleEventItem,
+          components: { Box, Image, Text, Hint, IconButton, More, Button },
+        }),
       ],
     }),
 
