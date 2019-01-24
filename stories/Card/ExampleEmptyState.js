@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from 'wix-style-react/Card';
 import { Add } from 'wix-style-react/new-icons';
-import TextLink from '../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import Button from 'wix-style-react/Button';
 import EmptyState from 'wix-style-react/EmptyState';
 
@@ -32,7 +32,7 @@ export default () => (
           title="You don't have any images yet"
           subtitle="Start by adding new images to your album"
           image={<ImagePlaceholder />}
-          children={<TextLink prefixIcon={<Add />}>Add image</TextLink>}
+          children={<TextButton prefixIcon={<Add />}>Add image</TextButton>}
         />
       </Card.Content>
     </Card>

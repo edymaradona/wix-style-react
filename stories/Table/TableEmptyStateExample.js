@@ -11,7 +11,7 @@ import {
 import Card from 'wix-style-react/Card';
 import Search from 'wix-style-react/Search';
 import Dropdown from 'wix-style-react/Dropdown';
-import TextLink from '../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import { ExternalLink } from 'wix-style-react/new-icons';
 
 import ImagePlaceholder from '../assets/ImagePlaceholder';
@@ -58,9 +58,9 @@ export class TableEmptyStateExample extends React.Component {
             subtitle="Add items to your website so people can buy them"
             image={<ImagePlaceholder />}
           >
-            <TextLink suffixIcon={<ExternalLink />}>
+            <TextButton suffixIcon={<ExternalLink />}>
               Learn how to add items
-            </TextLink>
+            </TextButton>
           </Table.EmptyState>
         </Table>
       </Card>

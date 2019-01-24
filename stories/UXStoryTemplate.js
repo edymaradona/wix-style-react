@@ -2,7 +2,7 @@ import React from 'react';
 import { string, array, any } from 'prop-types';
 import LinkTo from '@storybook/addon-links/react';
 import Markdown from 'wix-storybook-utils/Markdown';
-import TextLink from '../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import ChevronRight from 'wix-style-react/new-icons/ChevronRight';
 
 import { description } from 'wix-storybook-utils/Sections';
@@ -42,7 +42,7 @@ export const StoryLink = props => {
 
   return (
     <LinkTo {...rest}>
-      <TextLink>{child}</TextLink>
+      <TextButton>{child}</TextButton>
     </LinkTo>
   );
 };

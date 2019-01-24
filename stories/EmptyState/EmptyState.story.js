@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links';
 import { storySettings } from './storySettings';
 
 import EmptyState from '../../src/EmptyState';
-import TextLink from '../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import Heading from '../../src/Heading';
 
 import Add from '../../src/new-icons/Add';
@@ -12,21 +12,21 @@ import StatusComplete from '../../src/new-icons/StatusComplete';
 
 import ImagePlaceholder from '../assets/ImagePlaceholder';
 
-const singleAction = <TextLink prefixIcon={<Add />}>New Item</TextLink>;
+const singleAction = <TextButton prefixIcon={<Add />}>New Item</TextButton>;
 
 const singleActionLongText = (
-  <TextLink ellipsis prefixIcon={<Add />}>
+  <TextButton ellipsis prefixIcon={<Add />}>
     New Item with a ridiculous length name that does not fit to a single line
-  </TextLink>
+  </TextButton>
 );
 
 const twoActions = (
   <span>
     <span style={{ margin: '0 15px' }}>
-      <TextLink prefixIcon={<Add />}>New Item</TextLink>
+      <TextButton prefixIcon={<Add />}>New Item</TextButton>
     </span>
     <span style={{ margin: '0 15px' }}>
-      <TextLink prefixIcon={<Download />}>Import Items</TextLink>
+      <TextButton prefixIcon={<Download />}>Import Items</TextButton>
     </span>
   </span>
 );
@@ -76,27 +76,27 @@ export default {
 
       <ul>
         <li>
-          <TextLink onClick={linkTo('2. Layout', '2.5 Page')}>Page</TextLink>
+          <TextButton onClick={linkTo('2. Layout', '2.5 Page')}>Page</TextButton>
           <br />
         </li>
         <li>
-          <TextLink onClick={linkTo('2. Layout', 'Card')}>Card</TextLink>
+          <TextButton onClick={linkTo('2. Layout', 'Card')}>Card</TextButton>
           <br />
         </li>
         <li>
-          <TextLink onClick={linkTo('7. Tooltips', '7.2. Popover')}>
+          <TextButton onClick={linkTo('7. Tooltips', '7.2. Popover')}>
             Popover
-          </TextLink>
+          </TextButton>
           <br />
         </li>
         <li>
-          <TextLink onClick={linkTo('9. Modals', '9.1 Alert')}>Alert</TextLink>
+          <TextButton onClick={linkTo('9. Modals', '9.1 Alert')}>Alert</TextButton>
           <br />
         </li>
         <li>
-          <TextLink onClick={linkTo('10. Tables', '10.1 Table')}>
+          <TextButton onClick={linkTo('10. Tables', '10.1 Table')}>
             Table
-          </TextLink>
+          </TextButton>
           <br />
         </li>
       </ul>

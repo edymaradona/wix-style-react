@@ -7,15 +7,15 @@ import FAQ from './FAQ.md';
 import Roadmap from './Roadmap.md';
 import IntroductionExample from './IntroductionExample';
 import { linkTo } from '@storybook/addon-links';
-import TextLink from '../../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 
 export default () => (
   <div>
     <Markdown source={Introduction} />
     <IntroductionExample />
-    <TextLink onClick={linkTo('WIP/Drag And Drop/SortableList', 'API')}>
+    <TextButton onClick={linkTo('WIP/Drag And Drop/SortableList', 'API')}>
       {`<SortableList/>`} Docs
-    </TextLink>
+    </TextButton>
     <Markdown source={FAQ} />
     <Markdown source={Roadmap} />
   </div>

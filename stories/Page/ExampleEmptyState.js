@@ -2,7 +2,7 @@ import React from 'react';
 
 import Page from 'wix-style-react/Page';
 import Button from 'wix-style-react/Button';
-import TextLink from '../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import EmptyState from 'wix-style-react/EmptyState';
 import { Add } from 'wix-style-react/new-icons';
 
@@ -35,7 +35,7 @@ const ExampleEmptyState = () => (
           subtitle="Create your product item in an easy & fast way to display it on your website"
           image={<ImagePlaceholder />}
         >
-          <TextLink prefixIcon={<Add />}>New Item</TextLink>
+          <TextButton prefixIcon={<Add />}>New Item</TextButton>
         </EmptyState>
       </Page.Content>
     </Page>

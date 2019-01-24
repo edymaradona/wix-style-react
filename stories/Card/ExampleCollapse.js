@@ -7,7 +7,7 @@ import Collapse from 'wix-style-react/Collapse';
 import FormField from 'wix-style-react/FormField';
 import Input from 'wix-style-react/Input';
 import Button from 'wix-style-react/Button';
-import TextLink from '../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 import Tooltip from 'wix-style-react/Tooltip';
 
 export default class extends React.Component {
@@ -58,7 +58,7 @@ export default class extends React.Component {
                         secondCardOpen ? 'squeeze' : 'expand'
                       }!`}
                     >
-                      <TextLink
+                      <TextButton
                         onClick={() =>
                           this.setState(state => ({
                             secondCardOpen: !state.secondCardOpen,
@@ -66,7 +66,7 @@ export default class extends React.Component {
                         }
                       >
                         {secondCardOpen ? 'Close' : 'Open'}
-                      </TextLink>
+                      </TextButton>
                     </Tooltip>
                   }
                 />

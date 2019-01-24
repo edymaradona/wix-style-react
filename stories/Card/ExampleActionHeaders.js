@@ -7,7 +7,7 @@ import FormField from 'wix-style-react/FormField';
 import Input from 'wix-style-react/Input';
 import Tooltip from 'wix-style-react/Tooltip';
 import Button from 'wix-style-react/Button';
-import TextLink from '../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react';
 
 export default () => (
   <div style={{ background: '#F0F4F7', padding: 30 }}>
@@ -44,7 +44,7 @@ export default () => (
                   content="And a tooltip!"
                 >
                   <div>
-                    <TextLink link="http://www.wix.com/">Link to Wix</TextLink>
+                    <TextButton as="a" href="http://www.wix.com/">Link to Wix</TextButton>
                   </div>
                 </Tooltip>
               }

@@ -2,7 +2,7 @@
 import React from 'react';
 import { MessageBoxMarketerialLayout } from 'wix-style-react/MessageBox';
 import Text from 'wix-style-react/Text';
-import TextLink from '../../../src/Deprecated/TextLink';
+import TextButton from 'wix-style-react/TextButton';
 
 export default () => (
   <MessageBoxMarketerialLayout
@@ -19,9 +19,9 @@ export default () => (
         <Text size="small" secondary>
           By sending an invite, you agree to the{' '}
         </Text>
-        <TextLink size="small" secondary>
+        <TextButton size="small" secondary>
           Wix Terms of Use.
-        </TextLink>
+        </TextButton>
       </div>
     }
   />
