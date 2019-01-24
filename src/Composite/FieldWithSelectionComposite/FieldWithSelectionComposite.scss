@@ -37,6 +37,7 @@ $borderColor: $B30;
     box-sizing: content-box;
     border-bottom-right-radius:0;
     border-top-right-radius: 0;
+    min-width: 0;
   }
 
   // TODO: extract mixin

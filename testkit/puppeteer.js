@@ -104,3 +104,9 @@ import { buttonDriverFactory } from '../src/Button/Button.driver';
 export const buttonTestkitFactory = puppeteerUniTestkitFactoryCreator(
   buttonDriverFactory,
 );
+
+import { thumbnailDriverFactory } from '../src/Thumbnail/Thumbnail.driver';
+
+export const thumbnailTestkitFactory = puppeteerUniTestkitFactoryCreator(
+  thumbnailDriverFactory,
+);

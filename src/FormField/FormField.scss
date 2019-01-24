@@ -1,6 +1,7 @@
 @import '../common.scss';
 
 $suffixHorizontalPadding: 12px;
+$inlineLabelMinHeight: 36px;
 
 .root {
   display: inline-flex;
@@ -25,6 +26,11 @@ $suffixHorizontalPadding: 12px;
   &.stretchContent{
     flex-grow: 1;
   }
+}
+
+.minLabelHeight {
+  min-height: $inlineLabelMinHeight;
+  line-height: $inlineLabelMinHeight;
 }
 
 .labelFromTop {

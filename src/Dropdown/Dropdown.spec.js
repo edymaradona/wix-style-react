@@ -8,8 +8,6 @@ import { mount } from 'enzyme';
 import { sleep } from 'wix-ui-test-utils/react-helpers';
 import { createRendererWithDriver, cleanup } from '../../test/utils/unit';
 
-const NewDropdown = props => <Dropdown {...props} upgrade />;
-
 describe('Dropdown', () => {
   const render = createRendererWithDriver(dropdownDriverFactory);
   const createDriver = jsx => render(jsx).driver;
@@ -30,7 +28,7 @@ describe('Dropdown', () => {
   describe('Uncontrolled SelectedId', () => {
     it('should select item with selectedId on init state', () => {
       const { inputDriver, dropdownLayoutDriver } = createDriver(
-        <NewDropdown options={getOptions()} initialSelectedId={0} />,
+        <Dropdown options={getOptions()} initialSelectedId={0} />,
       );
 
       expect(dropdownLayoutDriver.isOptionSelected(0)).toBeTruthy();
@@ -39,7 +37,7 @@ describe('Dropdown', () => {
 
     it('should select an item when clicked', () => {
       const { driver, dropdownLayoutDriver } = createDriver(
-        <NewDropdown options={getOptions()} />,
+        <Dropdown options={getOptions()} />,
       );
       driver.focus();
       dropdownLayoutDriver.clickAtOption(0);
@@ -48,7 +46,7 @@ describe('Dropdown', () => {
 
     it('should enter the selected option text when selected', () => {
       const { driver, inputDriver, dropdownLayoutDriver } = createDriver(
-        <NewDropdown options={getOptions()} />,
+        <Dropdown options={getOptions()} />,
       );
       driver.focus();
       dropdownLayoutDriver.clickAtOption(0);
@@ -57,7 +55,7 @@ describe('Dropdown', () => {
 
     it('should close when clicking on input (header)', () => {
       const { dropdownLayoutDriver, inputDriver } = createDriver(
-        <NewDropdown options={getOptions()} />,
+        <Dropdown options={getOptions()} />,
       );
       inputDriver.click();
       expect(dropdownLayoutDriver.isShown()).toBeTruthy();
@@ -69,25 +67,25 @@ describe('Dropdown', () => {
     });
 
     it('should be read only', () => {
-      const { driver } = createDriver(<NewDropdown options={getOptions()} />);
+      const { driver } = createDriver(<Dropdown options={getOptions()} />);
       expect(driver.isReadOnly()).toBeTruthy();
     });
 
     describe('initiallySelected', () => {
       it('should keep selectedId and value when initialSelectedId changed', () => {
         const { driver: _driver, rerender } = render(
-          <NewDropdown options={getOptions()} initialSelectedId={0} />,
+          <Dropdown options={getOptions()} initialSelectedId={0} />,
         );
         const { dropdownLayoutDriver } = _driver;
         expect(dropdownLayoutDriver.isOptionSelected(0)).toBeTruthy();
-        rerender(<NewDropdown options={getOptions()} initialSelectedId={1} />);
+        rerender(<Dropdown options={getOptions()} initialSelectedId={1} />);
         expect(dropdownLayoutDriver.isOptionSelected(0)).toBeTruthy();
       });
     });
 
     it(`should update selectedId when options change and id doesn't exist anymore`, () => {
       const { driver: _driver, rerender } = render(
-        <NewDropdown
+        <Dropdown
           options={[{ id: 0, value: 'Option 1' }, { id: 1, value: 'Option 2' }]}
           initialSelectedId={0}
         />,
@@ -96,7 +94,7 @@ describe('Dropdown', () => {
 
       expect(dropdownLayoutDriver.optionById(0).isSelected()).toBeTruthy();
       expect(inputDriver.getValue()).toBe('Option 1');
-      rerender(<NewDropdown options={[{ id: 1, value: 'Option 2' }]} />);
+      rerender(<Dropdown options={[{ id: 1, value: 'Option 2' }]} />);
 
       expect(
         dropdownLayoutDriver.options().some(option => option.isSelected()),
@@ -118,7 +116,7 @@ describe('Dropdown', () => {
 
       it('should log error when selectedId and initialSelectedId are used together', () => {
         render(
-          <NewDropdown
+          <Dropdown
             options={getOptions()}
             selectedId={0}
             initialSelectedId={0}
@@ -137,7 +135,7 @@ describe('Dropdown', () => {
   describe('Controlled SelectedId', () => {
     it('should keep current selection and value when option clicked', () => {
       const { driver, dropdownLayoutDriver, inputDriver } = createDriver(
-        <NewDropdown options={getOptions()} selectedId={0} />,
+        <Dropdown options={getOptions()} selectedId={0} />,
       );
 
       driver.focus();
@@ -149,7 +147,7 @@ describe('Dropdown', () => {
 
     it('should have no selection if selectedId does not exist', () => {
       const { dropdownLayoutDriver } = createDriver(
-        <NewDropdown
+        <Dropdown
           options={[{ id: 0, value: 'Option 1' }]}
           selectedId={99}
         />,
@@ -160,14 +158,14 @@ describe('Dropdown', () => {
 
     it('should update selection and value when selectedId changes', () => {
       const { driver: _driver, rerender } = render(
-        <NewDropdown options={getOptions()} selectedId={0} />,
+        <Dropdown options={getOptions()} selectedId={0} />,
       );
       const { dropdownLayoutDriver, inputDriver } = _driver;
 
       expect(dropdownLayoutDriver.isOptionSelected(0)).toBeTruthy();
       expect(inputDriver.getValue()).toBe('Option 1');
 
-      rerender(<NewDropdown options={getOptions()} selectedId={1} />);
+      rerender(<Dropdown options={getOptions()} selectedId={1} />);
 
       expect(dropdownLayoutDriver.isOptionSelected(1)).toBeTruthy();
       expect(inputDriver.getValue()).toBe('Option 2');
@@ -177,13 +175,13 @@ describe('Dropdown', () => {
   describe('Rerender', () => {
     it('should keep value when unrelated prop updates', () => {
       const { driver: _driver, rerender } = render(
-        <NewDropdown options={getOptions()} />,
+        <Dropdown options={getOptions()} />,
       );
       const { inputDriver } = _driver;
 
       inputDriver.enterText('foo');
       expect(inputDriver.getValue()).toBe('foo');
-      rerender(<NewDropdown options={getOptions()} status="error" />);
+      rerender(<Dropdown options={getOptions()} status="error" />);
 
       expect(inputDriver.getValue()).toBe('foo');
     });
@@ -196,7 +194,7 @@ describe('Dropdown', () => {
       const wrapper = div.appendChild(
         ReactTestUtils.renderIntoDocument(
           <div>
-            <NewDropdown dataHook={dataHook} />
+            <Dropdown dataHook={dataHook} />
           </div>,
         ),
       );
@@ -210,7 +208,7 @@ describe('Dropdown', () => {
   describe('enzyme testkit', () => {
     it('should exist', () => {
       const dataHook = 'myDataHook';
-      const wrapper = mount(<NewDropdown dataHook={dataHook} />);
+      const wrapper = mount(<Dropdown dataHook={dataHook} />);
       const dropdownTestkit = enzymeDropdownTestkitFactory({
         wrapper,
         dataHook,

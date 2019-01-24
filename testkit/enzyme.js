@@ -98,6 +98,7 @@ export const tabsTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Tabs/
 export const tagTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Tag/Tag.driver'));
 export const textTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Text/Text.driver'));
 export const textButtonTestkitFactory = enzymeUniTestkitFactoryCreator(load('../src/TextButton/TextButton.driver'));
+export const thumbnailTestkitFactory = enzymeUniTestkitFactoryCreator(load('../src/Thumbnail/Thumbnail.driver'));
 export const timeInputTestkitFactory = enzymeTestkitFactoryCreator(load('../src/TimeInput/TimeInput.driver'));
 export const tooltipTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Tooltip/Tooltip.driver'));
 export const headerTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Card/Header/Header.driver'));

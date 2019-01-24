@@ -16,28 +16,44 @@ Types of changes:
 
 ## Next
 
+### Docs
+
+- `<Button/>` - (Docs) - Emphasize that new drivers are async [#2817](https://github.com/wix/wix-style-react/pull/2817)
+
+## 5.25.0 - 2019-01-23
+
 ### Added
 
-- `<CalendarPanel/>` - Release! (Added also `<CalendarPanelFooter/>`) [#2753](https://github.com/wix/wix-style-react/pull/2753)
+- `<CalendarPanel/>` - New panel component (Added also `<CalendarPanelFooter/>`) [#2753](https://github.com/wix/wix-style-react/pull/2753)
+- `<Box/>` - New layout component that helps in common alignment use cases [#2726](https://github.com/wix/wix-style-react/pull/2726)
+- `<Thumbnail/>` - New selection component for thumbnails selection [#2728](https://github.com/wix/wix-style-react/pull/2728)
 
 ### Changed
 
 - `<DropdownLayout/>` - Change option font weight to `normal` instead of `thin` [#2765](https://github.com/wix/wix-style-react/pull/2765)
 - `<Text/>` - apply link style only to `<a>` that are direct children [#2788](https://github.com/wix/wix-style-react/pull/2788)
+- `<Notification/>` - changed timeout behavior with `upgrade` prop [#2766](https://github.com/wix/wix-style-react/pull/2766)
 
 ### Removed
 
 - Drivers cleanup - remove wrapper [#2786](https://github.com/wix/wix-style-react/pull/2786)
 
-### Deprecated
+### Docs
 
-- `<Notification/>` - changed timeout behavior with `upgrade` prop [#2766](https://github.com/wix/wix-style-react/pull/2766)
-
-- `<StatsWidget.Filter/>` - deprecated component, you should use the newer `<StatsWidget.FilterButton/>` component instead [#2777](https://github.com/wix/wix-style-react/pull/2777)
+- `<MultiSelect/>` - improve examples
+- `<GoogleAddressInput/>` - update the Google Maps API key in the docs [#2801](https://github.com/wix/wix-style-react/pull/2801)
+- `<GoogleAddressInput/>` - create an automated story [#2802](https://github.com/wix/wix-style-react/pull/2802)
 
 ### Fixed
 
  - `wix-style-react/dist/testkit` - fix `Cannot find module 'enzyme'` error when importing testkits [#2774](https://github.com/wix/wix-style-react/pull/2774)
+ - `<Modal/>` - Changing closing transition timing, making it a bit smoother [#2807](https://github.com/wix/wix-style-react/pull/2807)
+- `<FieldWithSelectionComposite/>` - fix CSS issue of container div [#2808](https://github.com/wix/wix-style-react/pull/2808)
+
+### Deprecated
+
+- `<Notification/>` - changed timeout behavior with `upgrade` prop [#2766](https://github.com/wix/wix-style-react/pull/2766)
+- `<StatsWidget.Filter/>` - deprecated component, you should use the newer `<StatsWidget.FilterButton/>` component instead [#2777](https://github.com/wix/wix-style-react/pull/2777)
 
 ## 5.24.0 - 2019-01-14
 

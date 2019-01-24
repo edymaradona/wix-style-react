@@ -3,6 +3,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Label from '../Label';
+import styles from './FormField.scss';
 import { createDriverFactory } from 'wix-ui-test-utils/driver-factory';
 import formFieldDriverFactory from './FormField.driver';
 
@@ -123,6 +124,13 @@ describe('FormField', () => {
       const text = 'hello';
       const driver = createDriver(renderFormField({ children: text }));
       expect(driver.getChildren().innerHTML).toEqual(text);
+    });
+
+    it('should apply minHeight on label wrapper when there is no children', () => {
+      const driver = createDriver(<FormField label="Text" />);
+      expect(
+        driver.element().querySelector(`.${styles.minLabelHeight}`),
+      ).not.toBeNull();
     });
 
     describe('when function', () => {

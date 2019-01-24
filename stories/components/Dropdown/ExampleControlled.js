@@ -41,7 +41,6 @@ class ControlledDropdown extends React.Component {
         onSelect={this.onSelect}
         placeholder={'Choose an option'}
         selectedId={this.state.selectedId}
-        upgrade
       />
     );
   }

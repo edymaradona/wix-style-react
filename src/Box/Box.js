@@ -39,7 +39,6 @@ const spacingValues = {
 const formatSpacingValue = value =>
   isFinite(value) ? value * spacingUnit : spacingValues[value] || `${value}`;
 
-/** 📦 Box is a wrapper component that provides a way to align, space, resize and style - easily and straightforwardly. */
 const Box = ({
   dataHook,
   children,
@@ -67,6 +66,12 @@ const Box = ({
   height,
   color,
   backgroundColor,
+  border,
+  borderColor,
+  borderTopColor,
+  borderRightColor,
+  borderBottomColor,
+  borderLeftColor,
 
   // Excluded props (which are handled above and should not be spread into `style`)
   'data-hook': dataHookByKebabCase,
@@ -110,6 +115,24 @@ const Box = ({
     // Styling
     color: colors[color] || color,
     backgroundColor: colors[backgroundColor] || backgroundColor,
+    border, // Must be assigned before the border color props (otherwise it would override them)
+
+    // Props which are spread just in case these are actually defined
+    ...(borderColor && {
+      borderColor: colors[borderColor] || borderColor,
+    }),
+    ...(borderTopColor && {
+      borderTopColor: colors[borderTopColor] || borderTopColor,
+    }),
+    ...(borderRightColor && {
+      borderRightColor: colors[borderRightColor] || borderRightColor,
+    }),
+    ...(borderBottomColor && {
+      borderBottomColor: colors[borderBottomColor] || borderBottomColor,
+    }),
+    ...(borderLeftColor && {
+      borderLeftColor: colors[borderLeftColor] || borderLeftColor,
+    }),
 
     // All other props which are passed (without those that are specified above)
     ...nativeStyles,
@@ -191,6 +214,16 @@ Box.propTypes = {
   color: PropTypes.string,
   /** Sets a background color by a key from the color palette or natively supported value (Hex, RGB, etc.) */
   backgroundColor: PropTypes.string,
+  /** Sets a border color by a key from the color palette or natively supported value (Hex, RGB, etc.) */
+  borderColor: PropTypes.string,
+  /** Sets a border top color by a key from the color palette or natively supported value (Hex, RGB, etc.) */
+  borderTopColor: PropTypes.string,
+  /** Sets a border right color by a key from the color palette or natively supported value (Hex, RGB, etc.) */
+  borderRightColor: PropTypes.string,
+  /** Sets a border bottom color by a key from the color palette or natively supported value (Hex, RGB, etc.) */
+  borderBottomColor: PropTypes.string,
+  /** Sets a border left color by a key from the color palette or natively supported value (Hex, RGB, etc.) */
+  borderLeftColor: PropTypes.string,
   /** Applied as data-hook HTML attribute that can be used in the tests */
   dataHook: PropTypes.string,
 };

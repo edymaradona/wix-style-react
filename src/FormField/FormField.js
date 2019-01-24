@@ -49,7 +49,7 @@ class FormField extends React.Component {
      * * `setCharactersLeft` - function accepts a number and will display it on top right of `FormField` component
      *
      */
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 
     /** Defines if the content (children container) grows when there's space available (otherwise, it uses the needed space only) */
     stretchContent: PropTypes.bool,
@@ -127,12 +127,14 @@ class FormField extends React.Component {
   };
 
   _renderInlineSuffixes = () => {
-    const { label, required, id } = this.props;
+    const { label, required, id, children } = this.props;
 
     return (
       <div
         data-hook="formfield-inline-suffixes"
-        className={styles.suffixesInline}
+        className={classnames(styles.suffixesInline, {
+          [styles.minLabelHeight]: !children,
+        })}
       >
         <Label
           appearance="T1"
@@ -178,7 +180,11 @@ class FormField extends React.Component {
         })}
       >
         {label && labelPlacement === labelPlacements.top && (
-          <div className={styles.label}>
+          <div
+            className={classnames(styles.label, {
+              [styles.minLabelHeight]: !children,
+            })}
+          >
             <Label
               appearance="T1"
               children={label}

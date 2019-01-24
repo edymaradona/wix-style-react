@@ -1,6 +1,6 @@
 # Dropdown Migration Guide
 
-## Migration from 5.x.x to ?.x.x (upgrade prop)
+## Migration from 5.x.x to 6.x.x (upgrade prop)
 
 Previously, `selectedId` prop was used as hybrid of Controlled and Uncontrolled modes.
 You could update the `selectedId` (Controlled), but when an option is selected, it would immediately set the state.

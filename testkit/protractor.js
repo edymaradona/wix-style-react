@@ -391,3 +391,9 @@ import { buttonDriverFactory } from '../src/Button/Button.driver';
 export const buttonTestkitFactory = protractorUniTestkitFactoryCreator(
   buttonDriverFactory,
 );
+
+import { thumbnailDriverFactory } from '../src/Thumbnail/Thumbnail.driver';
+
+export const thumbnailTestkitFactory = protractorUniTestkitFactoryCreator(
+  thumbnailDriverFactory,
+);

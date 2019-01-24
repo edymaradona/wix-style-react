@@ -1,6 +1,6 @@
 # Notification Migration Guide
 
-## Migration from 5.x.x to ?.x.x (upgrade prop)
+## Migration from 5.x.x to 6.x.x (upgrade prop)
 
 Previously, when `type != global` and no `timeout` prop was passed, the notification would be shown for 6 seconds before it was hidden.
 There was no way to make persistent notification when `type != global`
