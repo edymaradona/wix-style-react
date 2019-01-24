@@ -147,12 +147,6 @@ export const imageViewerTestkitFactory = protractorTestkitFactoryCreator(
   imageViewerDriverFactory,
 );
 
-import textLinkDriverFactory from '../src/Deprecated/TextLink/TextLink.protractor.driver';
-
-export const textLinkTestkitFactory = protractorTestkitFactoryCreator(
-  textLinkDriverFactory,
-);
-
 import popoverMenuDriverFactory from '../src/PopoverMenu/PopoverMenu.protractor.driver';
 
 export const popoverMenuTestkitFactory = protractorTestkitFactoryCreator(
