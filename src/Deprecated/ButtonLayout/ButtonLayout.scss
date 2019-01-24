@@ -1,9 +1,9 @@
 // TODO: aggresively refactor, this file generates a lot of repetitive
 // selectors and bloats css bundle
 
-@import '../common';
-@import '../common/Focusable/Focusable';
-@import '../typography-helpers';
+@import '../../common';
+@import '../../common/Focusable/Focusable';
+@import '../../typography-helpers';
 
 $base-transition: all 100ms linear;
 

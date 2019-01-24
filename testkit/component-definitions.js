@@ -90,12 +90,6 @@ export default {
     },
   },
 
-  ButtonLayout: {
-    props: {
-      children: <div>abc</div>,
-    },
-  },
-
   Tag: {
     props: {
       id: 'hello',

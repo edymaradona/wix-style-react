@@ -3,16 +3,16 @@ import { any, bool, oneOf, string } from 'prop-types';
 import classNames from 'classnames';
 import styles from './ButtonLayout.scss';
 
-import deprecationLog from '../utils/deprecationLog';
-
-deprecationLog(
-  `Using "ButtonLayout" is deprecated. Please see "5 Buttons" updated documentation section for custom component rendering.`,
-);
+import deprecationLog from '../../utils/deprecationLog';
 
 /**
  * General Buttons
  */
 const ButtonLayout = props => {
+  deprecationLog(
+    `Using "ButtonLayout" is deprecated. Please see "5 Buttons" updated documentation section for custom component rendering.`,
+  );
+
   const {
     theme,
     hover,

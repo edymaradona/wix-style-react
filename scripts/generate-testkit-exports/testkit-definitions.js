@@ -141,10 +141,6 @@ module.exports = {
 
   Avatar: { unidriver },
 
-  ButtonLayout: {
-    skipSanityTest, // TODO: i don't knowm, it fails, need to check why. Currently it doesn't have test anyway. Leaving for later
-  },
-
   Tag: {},
 
   TextButton: {

@@ -1,5 +1,5 @@
 import { testkitFactoryCreator } from 'wix-ui-test-utils/vanilla';
-import buttonLayoutDriverFactory from '../ButtonLayout/ButtonLayout.driver';
+import buttonLayoutDriverFactory from '../Deprecated/ButtonLayout/ButtonLayout.driver';
 import { dataHooks } from './Tag.helpers';
 import textDriverFactory from '../Text/Text.driver';
 import tagDriverFactory from './Tag.driver';

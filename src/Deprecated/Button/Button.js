@@ -1,8 +1,8 @@
 import React from 'react';
 import { func, node, string } from 'prop-types';
-import styles from '../../ButtonLayout/ButtonLayout.scss';
+import styles from '../ButtonLayout/ButtonLayout.scss';
 import WixComponent from '../../BaseComponents/WixComponent';
-import ButtonLayout from '../../ButtonLayout/ButtonLayout';
+import ButtonLayout from '../ButtonLayout/ButtonLayout';
 import { withFocusable, focusableStates } from '../../common/Focusable';
 import { pickAccessibilityProps } from '../../common/accessibility';
 

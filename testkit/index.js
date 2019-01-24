@@ -39,7 +39,6 @@ export const badgeSelectTestkitFactory = testkitFactoryCreator(load('../src/Badg
 export const boxTestkitFactory = uniTestkitFactoryCreator(load('../src/Box/Box.driver'));
 export const breadcrumbsTestkitFactory = testkitFactoryCreator(load('../src/Breadcrumbs/Breadcrumbs.driver'));
 export const buttonTestkitFactory = uniTestkitFactoryCreator(load('../src/Button/Button.driver'));
-export const buttonLayoutTestkitFactory = testkitFactoryCreator(load('../src/ButtonLayout/ButtonLayout.driver'));
 export const calendarTestkitFactory = testkitFactoryCreator(load('../src/Calendar/Calendar.driver'));
 export const calendarPanelTestkitFactory = testkitFactoryCreator(load('../src/CalendarPanel/CalendarPanel.driver'));
 export const calendarPanelFooterTestkitFactory = uniTestkitFactoryCreator(load('../src/CalendarPanelFooter/CalendarPanelFooter.driver'));

@@ -39,7 +39,6 @@ export const badgeSelectTestkitFactory = enzymeTestkitFactoryCreator(load('../sr
 export const boxTestkitFactory = enzymeUniTestkitFactoryCreator(load('../src/Box/Box.driver'));
 export const breadcrumbsTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Breadcrumbs/Breadcrumbs.driver'));
 export const buttonTestkitFactory = enzymeUniTestkitFactoryCreator(load('../src/Button/Button.driver'));
-export const buttonLayoutTestkitFactory = enzymeTestkitFactoryCreator(load('../src/ButtonLayout/ButtonLayout.driver'));
 export const calendarTestkitFactory = enzymeTestkitFactoryCreator(load('../src/Calendar/Calendar.driver'));
 export const calendarPanelTestkitFactory = enzymeTestkitFactoryCreator(load('../src/CalendarPanel/CalendarPanel.driver'));
 export const calendarPanelFooterTestkitFactory = enzymeUniTestkitFactoryCreator(load('../src/CalendarPanelFooter/CalendarPanelFooter.driver'));
