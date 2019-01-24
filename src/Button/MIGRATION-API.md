@@ -1,5 +1,10 @@
 # Migration to new Button API
 
+## TL;DR
+
+- `theme` prop replaced with new `skin` and `priority` props.
+- react/enzyme testkit is now *async* !
+
 ## Why API as changed
 
 - Removed redundant functionality.
@@ -119,9 +124,12 @@ CloseButton
 
 - `close-transparent` --> skin = "transparent'
 
-## Testkit deprecations
+## Testkit Deprecations
 
-New button testkit is written with unidriver which means that ReactTestUtils, Enzyme, Puppeteer and Protractor are now supported by default.
+****************************************************
+** New Unit (React/Enzyme) Testkits Are *Async* ! **
+****************************************************
+New button testkit is written with UniDriver which means that ReactTestUtils, Enzyme, Puppeteer and Protractor are now supported by default.
 
 Deprecated Unit API
 

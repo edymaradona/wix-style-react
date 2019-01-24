@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CodeExample from 'wix-storybook-utils/CodeExample';
+import LiveCodeExample from '../utils/Components/LiveCodeExample';
 
 import FormField from 'wix-style-react/FormField';
 import Input from 'wix-style-react/Input';
@@ -13,7 +14,6 @@ import ToggleSwitch from 'wix-style-react/ToggleSwitch';
 
 import ExampleWithLengthCount from './ExampleWithLengthCount';
 import ExampleWithLengthCountRaw from '!raw-loader!./ExampleWithLengthCount';
-import ExampleWithinGrid from './ExampleWithinGrid';
 import ExampleWithinGridRaw from '!raw-loader!./ExampleWithinGrid';
 
 const ID = 'formFieldId';
@@ -105,11 +105,11 @@ export default {
         </div>
       </CodeExample>
 
-      <CodeExample title="Within Grid" code={ExampleWithinGridRaw}>
-        <div>
-          <ExampleWithinGrid />
-        </div>
-      </CodeExample>
+      <LiveCodeExample
+        title="Within Grid"
+        compact
+        initialCode={ExampleWithinGridRaw}
+      />
     </div>
   ),
 };

@@ -93,6 +93,19 @@ describe('Box', () => {
         await autoExampleDriver.setProps({ backgroundColor: '#3899ec' });
         await createDriver();
       });
+
+      eyes.it(
+        'should be rendered with blue border color on the top, green color on the right, red color on the bottom and gray color on the left',
+        async () => {
+          await autoExampleDriver.setProps({
+            border: '1px solid #2b81cb',
+            borderRightColor: 'G00',
+            borderBottomColor: '#d6453d',
+            borderLeftColor: 'D50',
+          });
+          await createDriver();
+        },
+      );
     });
   });
 

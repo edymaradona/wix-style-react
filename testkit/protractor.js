@@ -399,3 +399,9 @@ import { boxDriverFactory } from '../src/Box/Box.driver';
 export const boxTestkitFactory = protractorUniTestkitFactoryCreator(
   boxDriverFactory,
 );
+
+import { thumbnailDriverFactory } from '../src/Thumbnail/Thumbnail.driver';
+
+export const thumbnailTestkitFactory = protractorUniTestkitFactoryCreator(
+  thumbnailDriverFactory,
+);

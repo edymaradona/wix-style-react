@@ -12,7 +12,7 @@ class Button extends Component {
     upgrade: allValidators(PropTypes.bool, (props, propName) => {
       if (!props[propName]) {
         deprecationLog(
-          'Using "Button" with current api is deprecated. In order to upgrade to the new Button api just use "<Button upgrade/>" and follow "5.1 Button" changed api docs.',
+          `Using "Button" with current API is deprecated. In order to upgrade to the new Button api just use "<Button upgrade/>" and follow "5.1 Button" changed api docs. IMPORTANT! - After upgrading, when you import the react/enzyme "buttonTestkitFactory", you will get an async testkit (all methods are async).`,
         );
       }
     }),

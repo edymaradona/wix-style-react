@@ -38,7 +38,7 @@ class Button extends Component {
     children: node,
     /** String based data hook */
     dataHook: string,
-    /** Flag to enable new button functionality */
+    /** Flag to enable new button API. IMPORTANT! - After upgrading, when you import the react/enzyme "buttonTestkitFactory", you will get an async testkit (all methods are async)*/
     upgrade: bool,
   };
 

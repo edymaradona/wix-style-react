@@ -125,6 +125,7 @@ import './Popover/index.story';
 import './Proportion/index.story.js';
 import './Skeleton.story.js';
 import './Text/index.story';
+import './Thumbnail/index.story';
 
 // Styling
 import './Typography/TypographyClassesStory';
@@ -151,6 +152,7 @@ import './TableToolbar/ToolbarTestStory'; // Tests/10. Table
 import './Tag/TagTestStory'; // Tests/12. Other/12.5 Tag
 import './Avatar/AvatarTestStory'; // Tests/12. Other/12.6 Avatar
 import './Box/testStory';
+import './Thumbnail/testStory';
 
 // The generated test component
 import './GeneratedTestComponent/index.story';

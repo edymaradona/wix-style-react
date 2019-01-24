@@ -28,6 +28,8 @@ const attachHooks = (beforeAllHook, afterAllHook) => {
   afterAll(async () => await afterAllHook());
 };
 
+const DATA_HOOK_PROP_NAME = 'dataHook';
+
 const DRIVER_ASSERTS = {
   enzyme: ({ name, component, props, beforeAllHook, afterAllHook }) => {
     describe('Enzyme testkits', () => {
@@ -39,6 +41,7 @@ const DRIVER_ASSERTS = {
             React.createElement(component, props),
             enzymeTestkitFactories[`${lowerFirst(name)}TestkitFactory`],
             mount,
+            { dataHookPropName: DATA_HOOK_PROP_NAME },
           ),
         ).toBe(true));
     });
@@ -52,6 +55,7 @@ const DRIVER_ASSERTS = {
           isTestkitExists(
             React.createElement(component, props),
             reactTestUtilsTestkitFactories[`${lowerFirst(name)}TestkitFactory`],
+            { dataHookPropName: DATA_HOOK_PROP_NAME },
           ),
         ).toBe(true));
     });
@@ -89,6 +93,7 @@ const UNIDRIVER_ASSERTS = {
             React.createElement(component, props),
             enzymeTestkitFactories[`${lowerFirst(name)}TestkitFactory`],
             mount,
+            { dataHookPropName: DATA_HOOK_PROP_NAME },
           ),
         ).resolves.toBe(true));
     });
@@ -102,6 +107,7 @@ const UNIDRIVER_ASSERTS = {
           isUniTestkitExists(
             React.createElement(component, props),
             reactTestUtilsTestkitFactories[`${lowerFirst(name)}TestkitFactory`],
+            { dataHookPropName: DATA_HOOK_PROP_NAME },
           ),
         ).resolves.toBe(true));
     });

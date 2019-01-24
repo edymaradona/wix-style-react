@@ -106,3 +106,9 @@ import { boxDriverFactory } from '../src/Box/Box.driver';
 export const boxTestkitFactory = puppeteerUniTestkitFactoryCreator(
   boxDriverFactory,
 );
+
+import { thumbnailDriverFactory } from '../src/Thumbnail/Thumbnail.driver';
+
+export const thumbnailTestkitFactory = puppeteerUniTestkitFactoryCreator(
+  thumbnailDriverFactory,
+);

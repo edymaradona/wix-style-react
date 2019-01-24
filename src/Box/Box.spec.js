@@ -34,6 +34,96 @@ describe('Box', () => {
 
       expect(await driver.hasChild()).toBeTruthy();
     });
+
+    describe('Borders', () => {
+      it('should style the border', async () => {
+        const expectedBorder = '1px solid blue';
+        const children = <span>Children</span>;
+        const driver = createDriver(
+          <Box border={expectedBorder}>{children}</Box>,
+        );
+
+        expect(await driver.getStyle()).toContain(`border: ${expectedBorder}`);
+      });
+
+      it('should pass the `borderColor` prop even if `border` is passed', async () => {
+        const expectedBorder = 'green';
+        const children = <span>Children</span>;
+        const driver = createDriver(
+          <Box border="1px solid blue" borderColor={expectedBorder}>
+            {children}
+          </Box>,
+        );
+
+        expect(await driver.getStyle()).toContain(
+          `border-color: ${expectedBorder}`,
+        );
+      });
+
+      it('should style the borders specifically', async () => {
+        const expectedBorderTopColor = '#2b81cb';
+        const expectedBorderRightColor = '#D6453D';
+        const expectedBorderBottomColor = '#8E21B1';
+        const expectedBorderLeftColor = '#44823F';
+        const children = <span>Children</span>;
+        const driver = createDriver(
+          <Box
+            borderTopColor={expectedBorderTopColor}
+            borderRightColor={expectedBorderRightColor}
+            borderBottomColor={expectedBorderBottomColor}
+            borderLeftColor={expectedBorderLeftColor}
+          >
+            {children}
+          </Box>,
+        );
+
+        expect(await driver.getStyle()).toContain(
+          `border-top-color: ${expectedBorderTopColor}`,
+        );
+        expect(await driver.getStyle()).toContain(
+          `border-right-color: ${expectedBorderRightColor}`,
+        );
+        expect(await driver.getStyle()).toContain(
+          `border-bottom-color: ${expectedBorderBottomColor}`,
+        );
+        expect(await driver.getStyle()).toContain(
+          `border-left-color: ${expectedBorderLeftColor}`,
+        );
+      });
+
+      it('should pass the border color props even if `border` and `borderColor` are passed', async () => {
+        const expectedBorderTopColor = '#2b81cb';
+        const expectedBorderRightColor = '#D6453D';
+        const expectedBorderBottomColor = '#8E21B1';
+        const expectedBorderLeftColor = '#44823F';
+        const children = <span>Children</span>;
+        const driver = createDriver(
+          <Box
+            border="1px solid blue"
+            borderColor="green"
+            borderTopColor={expectedBorderTopColor}
+            borderRightColor={expectedBorderRightColor}
+            borderBottomColor={expectedBorderBottomColor}
+            borderLeftColor={expectedBorderLeftColor}
+          >
+            {children}
+          </Box>,
+        );
+
+        expect(await driver.getStyle()).toContain(
+          `border-top-color: ${expectedBorderTopColor}`,
+        );
+        expect(await driver.getStyle()).toContain(
+          `border-right-color: ${expectedBorderRightColor}`,
+        );
+        expect(await driver.getStyle()).toContain(
+          `border-bottom-color: ${expectedBorderBottomColor}`,
+        );
+        expect(await driver.getStyle()).toContain(
+          `border-left-color: ${expectedBorderLeftColor}`,
+        );
+      });
+    });
   });
 
   describe('formatSpacingValue function', () => {

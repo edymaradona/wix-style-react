@@ -110,8 +110,8 @@ A numeric value is measured in pixels by default.
     description: `
 ### 🎨 Styling
 
-The component extends the values for \`color\` and \`backgroundColor\`, by accepting the color palette keys -
-which are defined in the design system (beside the natively supported color values: Hex, RGB, etc.).
+The component extends the values for \`color\`, \`backgroundColor\` and \`borderColor\` (including border colors from the sides), 
+by accepting the color palette keys - which are defined in the design system (beside the natively supported color values: Hex, RGB, etc.).
 
 Moreover, any **valid** CSS property is exposed as \`prop\` (excepts \`flexDirection\`, \`justifyContent\` and \`alignItems\` which are wrapped specifically with appropriate \`props\`).  
     `,
@@ -123,7 +123,8 @@ Moreover, any **valid** CSS property is exposed as \`prop\` (excepts \`flexDirec
   margin={2}
   minHeight={100}
   backgroundColor="D70"
-  border="1px solid #e2e2e2"
+  border="1px solid"
+  borderColor="D50"
   borderRadius={5}
 >
   <Button

@@ -112,6 +112,7 @@ export const tagTestkitFactory = testkitFactoryCreator(load('../src/Tag/Tag.driv
 export const textTestkitFactory = testkitFactoryCreator(load('../src/Text/Text.driver'));
 export const textButtonTestkitFactory = uniTestkitFactoryCreator(load('../src/TextButton/TextButton.driver'));
 export const textLinkTestkitFactory = testkitFactoryCreator(load('../src/TextLink/TextLink.driver'));
+export const thumbnailTestkitFactory = uniTestkitFactoryCreator(load('../src/Thumbnail/Thumbnail.driver'));
 export const timeInputTestkitFactory = testkitFactoryCreator(load('../src/TimeInput/TimeInput.driver'));
 export const tooltipTestkitFactory = testkitFactoryCreator(load('../src/Tooltip/Tooltip.driver'));
 export const headerTestkitFactory = testkitFactoryCreator(load('../src/Card/Header/Header.driver'));

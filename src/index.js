@@ -108,3 +108,4 @@ export { default as Proportion } from './Proportion';
 export { default as DropdownBase } from './DropdownBase';
 export { default as CalendarPanelFooter } from './CalendarPanelFooter';
 export { default as Box } from './Box';
+export { default as Thumbnail } from './Thumbnail';
