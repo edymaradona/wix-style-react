@@ -1,4 +1,4 @@
-import { isClassExists } from '../../test/utils';
+import { isClassExists } from '../../../test/utils';
 
 const getAttribute = (element, attribute) => element.getAttribute(attribute);
 
