@@ -60,7 +60,6 @@ export default {
     options,
     onSelect: option =>
       console.log(`option selected. ${JSON.stringify(option)}.`),
-    upgrade: true,
   },
   exampleProps: {
     // FIXME: The following onSelect callback prop is commented out since it exposes a
