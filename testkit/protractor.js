@@ -453,3 +453,9 @@ import { thumbnailDriverFactory } from '../src/Thumbnail/Thumbnail.driver';
 export const thumbnailTestkitFactory = protractorUniTestkitFactoryCreator(
   thumbnailDriverFactory,
 );
+
+import { floatingNotificationDriverFactory } from '../src/FloatingNotification/FloatingNotification.driver';
+
+export const floatingNotificationTestkitFactory = protractorUniTestkitFactoryCreator(
+  floatingNotificationDriverFactory,
+);

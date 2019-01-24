@@ -112,3 +112,9 @@ import { thumbnailDriverFactory } from '../src/Thumbnail/Thumbnail.driver';
 export const thumbnailTestkitFactory = puppeteerUniTestkitFactoryCreator(
   thumbnailDriverFactory,
 );
+
+import { floatingNotificationDriverFactory } from '../src/FloatingNotification/FloatingNotification.driver';
+
+export const floatingNotificationTestkitFactory = puppeteerUniTestkitFactoryCreator(
+  floatingNotificationDriverFactory,
+);
