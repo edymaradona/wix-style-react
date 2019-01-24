@@ -189,158 +189,14 @@ describe('Notification', () => {
     });
   });
 
-  describe('Closing - deprecated logic', () => {
-    let driver, rerender;
-
-    beforeEach(() => {
-      jest.useFakeTimers();
-    });
-
-    describe('Closing when clicking on close button', () => {
-      beforeEach(() => {
-        const {
-          driver: notificationDriver,
-          rerender: notificationRerender,
-        } = render(renderNotificationWithProps({ show: true }));
-        notificationDriver.clickOnCloseButton();
-        driver = notificationDriver;
-        rerender = notificationRerender;
-      });
-
-      beforeEach(() => {
-        jest.runAllTimers();
-      });
-
-      it('should close the notification', () => {
-        expect(driver.visible()).toBeFalsy();
-      });
-
-      it('should allow reopening the notification after closed by close button', () => {
-        rerender(renderNotificationWithProps({ show: true }));
-        expect(driver.visible()).toBeTruthy();
-      });
-    });
-
-    ['local', 'sticky', 'global'].forEach(type => {
-      describe(
-        `Closing after timeout for ${type} Notification`,
-        () => {
-          const someTimeout = 132;
-
-          if (type !== 'global') {
-            it('should close after default timeout (6s)', () => {
-              const defaultTimeout = 6000;
-              driver = createDriver(
-                renderNotificationWithProps({ show: true, type }),
-              );
-              jest.runAllTimers();
-
-              expect(driver.visible()).toBeFalsy();
-              expect(
-                setTimeout.mock.calls.find(call => call[1] === defaultTimeout),
-              ).toBeTruthy();
-            });
-          } else {
-            it(`should not close after default timeout (6s) for ${type} Notification`, () => {
-              driver = createDriver(
-                renderNotificationWithProps({ show: true, type }),
-              );
-              jest.runAllTimers();
-
-              expect(driver.visible()).toBeTruthy();
-              expect(setTimeout).not.toBeCalled();
-            });
-          }
-
-          it('should close after a given timeout', () => {
-            driver = createDriver(
-              renderNotificationWithProps({
-                show: true,
-                type,
-                timeout: someTimeout,
-              }),
-            );
-
-            jest.runAllTimers();
-
-            expect(driver.visible()).toBeFalsy();
-            expect(
-              setTimeout.mock.calls.find(call => call[1] === someTimeout),
-            ).toBeTruthy();
-          });
-
-          it('should be able to show notification again after timeout', () => {
-            const { driver: _driver, rerender: _rerender } = render(
-              renderNotificationWithProps({
-                show: true,
-                type,
-                timeout: someTimeout,
-              }),
-            );
-
-            jest.runAllTimers();
-            expect(_driver.visible()).toBeFalsy();
-            expect(
-              setTimeout.mock.calls.find(call => call[1] === someTimeout),
-            ).toBeTruthy();
-            jest.clearAllTimers();
-
-            _rerender(
-              renderNotificationWithProps({
-                show: true,
-                type,
-                timeout: someTimeout,
-              }),
-            );
-            expect(_driver.visible()).toBeTruthy();
-          });
-
-          it('should close after starting from a closed status', () => {
-            const { driver: _driver, rerender: _rerender } = render(
-              renderNotificationWithProps({
-                show: false,
-                type,
-                timeout: someTimeout,
-              }),
-            );
-
-            jest.runAllTimers();
-            expect(_driver.visible()).toBeFalsy();
-            _rerender(
-              renderNotificationWithProps({
-                show: true,
-                type,
-                timeout: someTimeout,
-              }),
-            );
-            expect(_driver.visible()).toBeTruthy();
-            jest.runAllTimers();
-            expect(_driver.visible()).toBeFalsy();
-
-            expect(
-              setTimeout.mock.calls.find(call => call[1] === someTimeout),
-            ).toBeTruthy();
-          });
-        },
-        `Closing after timeout for ${type} Notification`,
-      );
-    });
-
-    afterEach(() => {
-      jest.clearAllTimers();
-    });
-  });
-
-  describe(`Closing - with upgrade prop`, () => {
+  describe(`Closing`, () => {
     beforeEach(() => {
       jest.useFakeTimers();
     });
 
     describe('Closing when clicking on close button', () => {
       it('should close the notification', () => {
-        const { driver } = render(
-          renderNotificationWithProps({ show: true, upgrade: true }),
-        );
+        const { driver } = render(renderNotificationWithProps({ show: true }));
         driver.clickOnCloseButton();
         jest.runAllTimers(); // for animations
         expect(driver.visible()).toBeFalsy();
@@ -348,12 +204,12 @@ describe('Notification', () => {
 
       it('should allow reopening the notification after closed by close button', () => {
         const { driver, rerender } = render(
-          renderNotificationWithProps({ show: true, upgrade: true }),
+          renderNotificationWithProps({ show: true }),
         );
         driver.clickOnCloseButton();
         jest.runAllTimers(); // for animations
         expect(driver.visible()).toBeFalsy();
-        rerender(renderNotificationWithProps({ show: true, upgrade: true }));
+        rerender(renderNotificationWithProps({ show: true }));
         expect(driver.visible()).toBeTruthy();
       });
     });
@@ -361,7 +217,7 @@ describe('Notification', () => {
     describe(`AutoHide`, () => {
       const someTimeout = 132;
       const renderNewNotification = props =>
-        renderNotificationWithProps({ ...props, upgrade: true });
+        renderNotificationWithProps({ ...props });
 
       it(`should keep notification shown regardless of any timers`, () => {
         const driver = createDriver(renderNewNotification({ show: true }));
