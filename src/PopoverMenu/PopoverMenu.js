@@ -38,6 +38,7 @@ class PopoverMenu extends WixComponent {
     appendTo: element,
     /** Sets a zIndex to the popover  */
     zIndex: number,
+    showArrow: bool,
   };
 
   static defaultProps = {
@@ -48,6 +49,7 @@ class PopoverMenu extends WixComponent {
     maxWidth: '378px',
     appendToParent: false,
     zIndex: 0,
+    showArrow: true,
   };
 
   _menuItems = items =>
@@ -102,6 +104,7 @@ class PopoverMenu extends WixComponent {
         appendTo={this.props.appendTo}
         appendToParent={this.props.appendToParent}
         zIndex={this.props.zIndex}
+        showArrow={this.props.showArrow}
       >
         <Button type="button" height={buttonHeight} theme={buttonTheme}>
           <More />

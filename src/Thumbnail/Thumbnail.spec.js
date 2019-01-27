@@ -26,11 +26,21 @@ describe('Thumbnail', () => {
     expect(onClick).toHaveBeenCalled();
   });
 
+  describe('keyboard events', () => {
+    it('should invoke onClick for spacebar and enter', async () => {
+      const onClick = jest.fn();
+      const driver = createDriver(<Thumbnail onClick={onClick} />);
+      await driver.keyDown(32); // spacebar
+      await driver.keyDown(13); // enter
+      expect(onClick.mock.calls.length).toEqual(2);
+    });
+  });
+
   describe('`image` prop', () => {
     describe('as string', () => {
       it('should use string as <img/> src', async () => {
         const src = 'john.jpg';
-        const driver = createDriver(<Thumbnail image={src} title="shit" />);
+        const driver = createDriver(<Thumbnail image={src} />);
         expect(
           await driver
             .getImage()

@@ -1,3 +1,4 @@
+import ReactTestUtils from 'react-dom/test-utils';
 import { thumbnailDriverFactory as publicDriverFactory } from './Thumbnail.driver';
 
 export const thumbnailPrivateDriverFactory = base => {
@@ -18,5 +19,8 @@ export const thumbnailPrivateDriverFactory = base => {
 
     /** Does the thumbnails image exist */
     imageExists: () => byHook('thumbnail-image').exists(),
+
+    keyDown: async keyCode =>
+      ReactTestUtils.Simulate.keyDown(await base.getNative(), { keyCode }),
   };
 };

@@ -2,14 +2,19 @@ import eyes from 'eyes.it';
 import path from 'path';
 import { filePickerTestkitFactory } from '../../testkit/protractor';
 import { waitForVisibilityOf } from 'wix-ui-test-utils/protractor';
-import { getStoryUrl } from '../../test/utils/storybook-helpers';
+import { storySettings } from '../../stories/FilePicker/storySettings';
+import { createStoryUrl } from '../../test/utils/storybook-helpers';
+
+const storyUrl = createStoryUrl({
+  kind: storySettings.kind,
+  story: storySettings.storyName,
+});
 
 describe('FilePicker', () => {
-  const storyUrl = getStoryUrl('3. Inputs', '3.10 + FilePicker');
-  const dataHook = 'story-filepicker';
-
   eyes.it('should display filePicker', () => {
-    const driver = filePickerTestkitFactory({ dataHook });
+    const driver = filePickerTestkitFactory({
+      dataHook: storySettings.dataHook,
+    });
 
     browser.get(storyUrl);
     waitForVisibilityOf(driver.element(), 'Cannot find FilePicker').then(() => {

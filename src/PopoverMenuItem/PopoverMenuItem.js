@@ -16,17 +16,24 @@ class PopoverMenuItem extends WixComponent {
     onClick: PropTypes.func,
     size: PropTypes.oneOf(['normal', 'large']),
     disabled: PropTypes.bool,
+    divider: PropTypes.bool,
   };
 
   static defaultProps = {
     size: 'normal',
     disabled: false,
+    divider: false,
   };
 
   render() {
     const isDisabled = this.props.disabled;
+    const isDivider = this.props.divider;
 
-    return (
+    return isDivider ? (
+      <li className={styles.rootDivider}>
+        <div className={styles.divider} />
+      </li>
+      ) : (
       <li
         className={classnames(styles.root, {
           [styles.large]: this.props.size === 'large',

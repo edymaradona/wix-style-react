@@ -4,8 +4,8 @@ import styles from './Thumbnail.st.css';
 
 import Check from 'wix-ui-icons-common/Check';
 import Text from '../Text';
+import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
 
-const noop = () => {};
 const isString = a => typeof a === 'string';
 
 /**
@@ -119,6 +119,10 @@ class Thumbnail extends React.PureComponent {
     </div>
   );
 
+  _onKeyDown = event =>
+    [13 /* enter */, 32 /* space */].some(key => event.keyCode === key) &&
+    this.props.onClick(event);
+
   render() {
     const {
       dataHook,
@@ -130,6 +134,8 @@ class Thumbnail extends React.PureComponent {
       hideSelectedIcon,
       width,
       height,
+      focusableOnFocus,
+      focusableOnBlur,
     } = this.props;
 
     const hasBackground = !!backgroundImage;
@@ -142,8 +148,12 @@ class Thumbnail extends React.PureComponent {
           { selected, disabled, size, hasBackground },
           this.props,
         )}
+        onFocus={focusableOnFocus}
+        onBlur={focusableOnBlur}
+        tabIndex={disabled ? null : 0}
         data-hook={dataHook}
-        onClick={disabled ? noop : onClick}
+        onClick={disabled ? null : onClick}
+        onKeyDown={disabled ? null : this._onKeyDown}
       >
         {!hideSelectedIcon && selected && this._renderSelectedIcon()}
         {hasBackground && this._renderBackgroundLayout()}
@@ -153,4 +163,4 @@ class Thumbnail extends React.PureComponent {
   }
 }
 
-export default Thumbnail;
+export default withFocusable(Thumbnail);

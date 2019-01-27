@@ -51,6 +51,9 @@ const popoverMenuDriverFactory = ({ element }) => {
           itemsArray()[index].querySelector('button'),
         ),
       ),
+      hasArrow: protect(() => {
+        return !!document.body.querySelector('[data-hook="tooltip-arrow"]');
+      }),
     },
   };
 

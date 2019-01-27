@@ -21,7 +21,7 @@ import './Page/index.story.js'; // 2.5 Page
 import './PageHeader/index.story.js'; // 2.5 + PageHeader
 import './Page/FullPageExample.js'; // 2.5 + Page Example
 import './EmptyState/EmptyState.story'; // 2.6 EmptyState
-import './StatsWidget'; // 2.7 StatsWidget
+import './StatsWidget/index.story'; // 2.7 StatsWidget
 import './AddItem/AddItem.story'; // 2.8 AddItem
 import './Grid';
 import './Card';
@@ -39,7 +39,7 @@ import './MultiSelect/index.story'; // 3.8 Tags
 import './MultiSelectComposite'; // 3.8 + MultiSelectComposite
 import './Search/index.story'; // 3.9 Search
 import './ImageViewer/index.story'; // 3.10 ImageViewer
-import './FilePicker'; // 3.10 + FilePicker
+import './FilePicker/index.story'; // 3.10 + FilePicker
 
 // 4. Selection
 import './Dropdown/DropdownStory.js'; // 4.1 Dropdown
@@ -50,7 +50,7 @@ import './MultiSelectCheckbox/index.story.js'; // 4.1 + MultiSelectCheckbox
 import './CheckBox/index.story.js'; // 4.2 Checkbox
 import './RadioGroup.story.js'; // 4.3 RadioGroup
 import './ToggleSwitch/index.story'; // 4.4 ToggleSwitch
-import './Slider'; // 4.7 Slider
+import './Slider/index.story'; // 4.7 Slider
 
 // 5. Buttons
 import './Button/index.story.js'; // 5.1 Standard
@@ -87,7 +87,7 @@ import './TableActionCell/TableActionCell.story'; // 10.1 Table -> TableActionCe
 
 // 11. Pickers and Selectors
 import './DropdownLayout'; // 11.1 DropdownLayout
-import './EditableSelector'; // 11.2 EditableSelector
+import './EditableSelector/index.story'; // 11.2 EditableSelector
 import './ModalSelectorLayout.story.js'; // 11.3 ModalSelectorLayout
 import './ColorPicker/index.story.js'; // 11.5 Color Picker
 import './Calendar/index.story'; // 11.5 Calendar
@@ -153,6 +153,9 @@ import './Tag/TagTestStory'; // Tests/12. Other/12.5 Tag
 import './Avatar/AvatarTestStory'; // Tests/12. Other/12.6 Avatar
 import './Box/testStory';
 import './Thumbnail/testStory';
+import './EditableSelector/testStory';
+import './Slider/testStory'; // 4.7 Slider
+import './StatsWidget/testStory'; // 2.7 StatsWidget
 
 // The generated test component
 import './GeneratedTestComponent/index.story';

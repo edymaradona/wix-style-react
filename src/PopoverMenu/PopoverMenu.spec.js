@@ -104,6 +104,23 @@ describe('PopoverMenu', () => {
     driver.menu.clickItemAt(0);
     expect(menuItem1Listener).not.toBeCalled();
   });
+
+  it('should not render arrow when prop showArrow=false', async () => {
+    const driver = createDriver(
+      <PopoverMenu showArrow={false}>
+        <PopoverMenuItem
+          dataHook={menuItemDataHook}
+        />
+      </PopoverMenu>,
+    ).init.menuItemDataHook(menuItemDataHook);
+    driver.click();
+
+    await waitFor(() => {
+      expect(driver.menu.isShown()).toBe(true);
+    });
+
+    expect(driver.menu.hasArrow()).toBeFalsy();
+  });
 });
 
 describe('Testkits', () => {

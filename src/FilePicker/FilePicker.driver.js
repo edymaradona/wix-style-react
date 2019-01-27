@@ -6,10 +6,20 @@ const filePickerDriverFactory = ({ element }) => {
 
   return {
     exists: () => !!element,
+
+    /** fulfilled if element has an error  */
     hasError: () => !!error,
+
+    /** returns FilePicker error message text  */
     errorMessage: () => error.textContent,
+
+    /** returns FilePicker input element  */
     getInput: () => input.textContent,
+
+    /** returns FilePicker subLabel text  */
     getSubLabel: () => subLabel.textContent,
+
+    /** returns FilePicker mainLabel text  */
     getMainLabel: () => mainLabel.textContent,
   };
 };

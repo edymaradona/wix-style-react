@@ -2,6 +2,7 @@ import React from 'react';
 import EditableSelector from '../../src/EditableSelector';
 import { Container, Row, Col } from '../../src/Grid';
 import Card from '../../src/Card';
+import { storySettings } from './storySettings';
 
 class CardWithEditableSelector extends React.Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class CardWithEditableSelector extends React.Component {
                 <Card.Header title="Editable Selector Inside Card" />
                 <Card.Content>
                   <EditableSelector
-                    dataHook="story-editable-selector"
+                    dataHook={storySettings.dataHook}
                     onOptionAdded={params => this.onOptionAdded(params)}
                     onOptionEdit={params => this.onOptionEdit(params)}
                     onOptionDelete={params => this.onOptionDelete(params)}

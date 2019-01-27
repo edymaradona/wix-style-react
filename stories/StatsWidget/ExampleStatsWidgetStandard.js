@@ -2,6 +2,7 @@ import React from 'react';
 import StatsWidget from '../../src/StatsWidget';
 import styles from './ExampleStatsWidget.scss';
 import { Container } from '../../src/Grid';
+import { storySettings } from './storySettings'
 
 const statistics = [
   {
@@ -24,7 +25,7 @@ export default () => (
       <StatsWidget
         title="Let's see what's going on with your store"
         statistics={statistics}
-        dataHook="standard-stats-widget"
+        dataHook={storySettings.dataHook}
       />
     </div>
   </Container>

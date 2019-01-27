@@ -6,7 +6,9 @@ import Add from '../new-icons/Add';
 import uniqueId from 'lodash/uniqueId';
 
 /**
- * File picker component
+ * # `<FilePicker/>`
+ *
+ * Component that opens system browser dialog for choosing files to upload
  */
 class FilePicker extends WixComponent {
   constructor(props) {

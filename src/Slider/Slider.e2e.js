@@ -1,14 +1,19 @@
 import eyes from 'eyes.it';
 import { sliderTestkitFactory } from '../../testkit/protractor';
 import { waitForVisibilityOf } from 'wix-ui-test-utils/protractor';
-import { getStoryUrl } from '../../test/utils/storybook-helpers';
+
+import { createTestStoryUrl } from '../../test/utils/storybook-helpers';
+import { storySettings, testStories } from '../../stories/Slider/storySettings';
+
+const storyUrl = createTestStoryUrl({
+  category: storySettings.category,
+  storyName: storySettings.storyName,
+  testName: testStories.slider,
+});
 
 describe('Slider', () => {
-  const storyUrl = getStoryUrl('4. Selection', '4.7 Slider');
-
   eyes.it('single handle flow', async () => {
-    const dataHook = 'story-slider';
-    const driver = sliderTestkitFactory({ dataHook });
+    const driver = sliderTestkitFactory({ dataHook: storySettings.dataHook });
     let handleTooltipValue;
 
     browser.get(storyUrl);
@@ -30,8 +35,9 @@ describe('Slider', () => {
   });
 
   eyes.it('multiple handles flow', async () => {
-    const dataHook = 'story-slider-multiple';
-    const driver = sliderTestkitFactory({ dataHook });
+    const driver = sliderTestkitFactory({
+      dataHook: `${storySettings.dataHook}-multiple`,
+    });
     let handleTooltipValue;
 
     browser.get(storyUrl);

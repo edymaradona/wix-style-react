@@ -54,6 +54,18 @@
   }
 }
 
+.rootDivider {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid $D60;
+}
+
+
 @include withRTL() {
   .icon {
     margin-left: 6px;

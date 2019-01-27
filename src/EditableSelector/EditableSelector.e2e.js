@@ -1,18 +1,25 @@
 import eyes from 'eyes.it';
 import { editableSelectorTestkitFactory } from '../../testkit/protractor';
 import { waitForVisibilityOf } from 'wix-ui-test-utils/protractor';
-import { getStoryUrl } from '../../test/utils/storybook-helpers';
+import { createTestStoryUrl } from '../../test/utils/storybook-helpers';
+import {
+  storySettings,
+  testStories,
+} from '../../stories/EditableSelector/storySettings';
+
+const storyUrl = createTestStoryUrl({
+  category: storySettings.category,
+  storyName: storySettings.storyName,
+  testName: testStories.editableSelector,
+});
 
 describe('EditableSelector', () => {
-  const storyUrl = getStoryUrl(
-    '11. Pickers and Selectors',
-    '11.2 EditableSelector',
-  );
-  const dataHook = 'story-editable-selector';
   let driver;
 
   beforeEach(() => {
-    driver = editableSelectorTestkitFactory({ dataHook });
+    driver = editableSelectorTestkitFactory({
+      dataHook: storySettings.dataHook,
+    });
     return browser.get(storyUrl);
   });
 

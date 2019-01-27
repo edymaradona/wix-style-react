@@ -16,6 +16,10 @@ Types of changes:
 
 ## Next
 
+### Added
+- `<PopoverMenu/>` new `showArrow` prop, allows to change visibility of Popover arrow [#2800](https://github.com/wix/wix-style-react/pull/2800)
+- `<PopoverMenuItem/>` new `divider` prop, allows to add divider in between PopoverMenu items [#2800](https://github.com/wix/wix-style-react/pull/2800)
+
 ### Docs
 
 - `<Button/>` - (Docs) - Emphasize that new drivers are async [#2817](https://github.com/wix/wix-style-react/pull/2817)

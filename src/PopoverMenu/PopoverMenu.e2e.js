@@ -31,6 +31,21 @@ describe('PopoverMenu', () => {
     await browser.get(storyUrl);
   }
 
+  async function getPageWithDividerMenu({ rtl } = {}) {
+    const storyUrl = createStoryUrl({
+      kind: '7. Tooltips',
+      story: '7.3 Popover Menu',
+      withExamples: true,
+      rtl,
+    });
+    logs.ignore(message => message.message.indexOf('Uncaught') === -1);
+
+    driver = popoverMenuTestkitFactory({
+      dataHook: storySettings.dataHookDivider,
+    }).init.menuItemDataHook(storySettings.itemDataHookDivider);
+    await browser.get(storyUrl);
+  }
+
   eyes.it('should show popover menu', async () => {
     await getPage();
     await waitForVisibilityOf(
@@ -75,6 +90,19 @@ describe('PopoverMenu', () => {
       EC.stalenessOf(driver.menu.element()),
       5000,
       'PopoverMenu has not been hidden after menu item click',
+    );
+  });
+
+  it('should contains divider', async () => {
+    await getPageWithDividerMenu();
+    await waitForVisibilityOf(driver.element());
+    await driver.click();
+    await waitForVisibilityOf(driver.menu.element());
+
+    await browser.wait(
+      waitForVisibilityOf(driver.menu.element(by.css(`[data-hook="${storySettings.itemDataHookDivider}"]`))),
+      1000,
+      'PopoverMenu has no divider',
     );
   });
 

@@ -36,13 +36,25 @@ storiesOf(kind, module).add(testStories.multipleThumbnails, () => (
         disabled
       />
     </Cell>
-    <Cell>
-      <Thumbnail
-        dataHook={storySettings.dataHook}
-        title="Thumbnail Title"
-        description="Without image"
-        width={270}
-      />
+    <Cell span={4}>
+      <div>
+        <Thumbnail
+          dataHook={storySettings.dataHook}
+          title="Thumbnail Title"
+          description="Without image"
+          width={270}
+        />
+      </div>
+    </Cell>
+    <Cell span={4}>
+      <div>
+        <Thumbnail
+          dataHook={storySettings.dataHook}
+          size="tiny"
+          image={getImageUrl(234, 30)}
+          height={70}
+        />
+      </div>
     </Cell>
     <Cell>
       <Thumbnail
@@ -50,6 +62,17 @@ storiesOf(kind, module).add(testStories.multipleThumbnails, () => (
         title="Thumbnail without description"
         width={270}
       />
+    </Cell>
+    <Cell span={4}>
+      <div dir="rtl">
+        <div>RTL</div>
+        <Thumbnail
+          backgroundImage={getImageUrl(270, 270)}
+          selected
+          width={270}
+          height={170}
+        />
+      </div>
     </Cell>
     <Cell span={4}>
       <Thumbnail
